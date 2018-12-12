@@ -5,7 +5,9 @@
     <RootNamespace>bom_tools</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Library.fs" />
+    <Compile Include="DTO.fs" />
+    <Compile Include="Domain.fs" />
+    <Compile Include="Import.fs" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

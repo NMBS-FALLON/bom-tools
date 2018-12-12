@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
-      "FSharp.Core/4.5.2": {
+      "FSharp.Core/4.5.4": {
         "type": "package",
         "compile": {
           "lib/netstandard1.6/FSharp.Core.dll": {}
@@ -64,6 +64,24 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.Office.Interop.Excel/15.0.4795.1000": {
+        "type": "package",
+        "compile": {
+          "lib/net20/Microsoft.Office.Interop.Excel.dll": {}
+        },
+        "runtime": {
+          "lib/net20/Microsoft.Office.Interop.Excel.dll": {}
+        }
+      },
+      "MicrosoftOfficeCore/15.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net35/Office.dll": {}
+        },
+        "runtime": {
+          "lib/net35/Office.dll": {}
+        }
+      },
       "NETStandard.Library/2.0.3": {
         "type": "package",
         "dependencies": {
@@ -82,20 +100,33 @@
     }
   },
   "libraries": {
-    "FSharp.Core/4.5.2": {
-      "sha512": "apbdQOjzsjQ637kTWQuW29jqwY18jsHMyNC5A+TPJZKFEIE2cIfQWf3V7+mXrxlbX69BueYkv293/g70wuXuRw==",
+    "FSharp.Core/4.5.4": {
+      "sha512": "yFLVknoI5dbp2Ugu88s/nl0gCu8ffN3jKoBXlaVQtEss2g3wGu8htQ4ygmp4azNegNKzmnQxRqGKm1uXkUmcvQ==",
       "type": "package",
-      "path": "fsharp.core/4.5.2",
+      "path": "fsharp.core/4.5.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "fsharp.core.4.5.2.nupkg.sha512",
+        "fsharp.core.4.5.4.nupkg.sha512",
         "fsharp.core.nuspec",
         "lib/net45/FSharp.Core.dll",
         "lib/net45/FSharp.Core.optdata",
-        "lib/net45/FSharp.Core.resources.dll",
         "lib/net45/FSharp.Core.sigdata",
         "lib/net45/FSharp.Core.xml",
+        "lib/net45/UnitTests/MockTypeProviders/cs/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/de/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/en/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/es/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/fr/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/it/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/ja/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/ko/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/pl/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/pt-BR/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/ru/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/tr/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/zh-Hans/FSharp.Core.resources.dll",
+        "lib/net45/UnitTests/MockTypeProviders/zh-Hant/FSharp.Core.resources.dll",
         "lib/net45/cs/FSharp.Core.resources.dll",
         "lib/net45/de/FSharp.Core.resources.dll",
         "lib/net45/en/FSharp.Core.resources.dll",
@@ -144,6 +175,29 @@
         "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json"
+      ]
+    },
+    "Microsoft.Office.Interop.Excel/15.0.4795.1000": {
+      "sha512": "DfceS96ustwfL8EOJNNRtpk6b0RylhjNpgeeemuvi9X4GYks2UTeAimjSrdFEfuqRo5ibZ4Sd0gJIeDr9gMa6Q==",
+      "type": "package",
+      "path": "microsoft.office.interop.excel/15.0.4795.1000",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Microsoft.Office.Interop.Excel.dll",
+        "microsoft.office.interop.excel.15.0.4795.1000.nupkg.sha512",
+        "microsoft.office.interop.excel.nuspec"
+      ]
+    },
+    "MicrosoftOfficeCore/15.0.0": {
+      "sha512": "/KgYw8uvv0Ut8FPvyEa1XJ/TrLSRgvTv3JgC2IT0/8NwoICzbEJWfmfwsE6Dwi8WH0jVkTEO7zRvGvaKqUOhqQ==",
+      "type": "package",
+      "path": "microsoftofficecore/15.0.0",
+      "files": [
+        ".nupkg.metadata",
+        "lib/net35/Office.dll",
+        "microsoftofficecore.15.0.0.nupkg.sha512",
+        "microsoftofficecore.nuspec"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -278,7 +332,9 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
-      "FSharp.Core >= 4.5.2",
+      "FSharp.Core >= 4.5.4",
+      "Microsoft.Office.Interop.Excel >= 15.0.4795.1000",
+      "MicrosoftOfficeCore >= 15.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
   },
@@ -289,11 +345,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\darien.shannon\\code\\DESign\\bom-tools\\bom-tools.fsproj",
+      "projectUniqueName": "C:\\Users\\darien.shannon\\code\\DESign\\bom-tools\\src\\bom-tools-library\\bom-tools.fsproj",
       "projectName": "bom-tools",
-      "projectPath": "C:\\Users\\darien.shannon\\code\\DESign\\bom-tools\\bom-tools.fsproj",
+      "projectPath": "C:\\Users\\darien.shannon\\code\\DESign\\bom-tools\\src\\bom-tools-library\\bom-tools.fsproj",
       "packagesPath": "C:\\Users\\darien.shannon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\darien.shannon\\code\\DESign\\bom-tools\\obj\\",
+      "outputPath": "C:\\Users\\darien.shannon\\code\\DESign\\bom-tools\\src\\bom-tools-library\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Users\\darien.shannon\\code\\dotnet-sdk\\sdk\\NuGetFallbackFolder"
@@ -311,6 +367,14 @@
         "netstandard2.0": {
           "projectReferences": {}
         }
+      },
+      "warningProperties": {
+        "noWarn": [
+          "NU1603",
+          "NU1604",
+          "NU1605",
+          "NU1608"
+        ]
       }
     },
     "frameworks": {
@@ -318,7 +382,15 @@
         "dependencies": {
           "FSharp.Core": {
             "target": "Package",
-            "version": "[4.5.2, )"
+            "version": "[4.5.4, )"
+          },
+          "Microsoft.Office.Interop.Excel": {
+            "target": "Package",
+            "version": "[15.0.4795.1000, )"
+          },
+          "MicrosoftOfficeCore": {
+            "target": "Package",
+            "version": "[15.0.0, )"
           },
           "NETStandard.Library": {
             "suppressParent": "All",
@@ -334,5 +406,27 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.Office.Interop.Excel 15.0.4795.1000' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.Office.Interop.Excel",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MicrosoftOfficeCore 15.0.0' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "MicrosoftOfficeCore",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    }
+  ]
 }
