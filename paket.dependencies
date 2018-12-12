@@ -1,0 +1,15 @@
+source https://www.nuget.org/api/v2
+
+nuget NETStandard.Library.NETFramework
+nuget FSharp.Core
+nuget Microsoft.Office.Interop.Excel
+nuget MicrosoftOfficeCore
+
+
+// [ FAKE GROUP ]
+group Build
+    storage none
+    source https://api.nuget.org/v3/index.json
+    nuget Fake.DotNet.Cli
+    nuget Fake.IO.FileSystem
+    nuget Fake.Core.Target

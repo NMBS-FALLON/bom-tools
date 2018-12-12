@@ -1,0 +1,4 @@
+# Downloaded packages and build tools.
+/packages
+
+/build
