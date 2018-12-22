@@ -2,8 +2,7 @@ source https://www.nuget.org/api/v2
 
 nuget NETStandard.Library.NETFramework
 nuget FSharp.Core
-nuget Microsoft.Office.Interop.Excel
-nuget MicrosoftOfficeCore
+nuget DocumentFormat.OpenXml
 
 
 // [ FAKE GROUP ]

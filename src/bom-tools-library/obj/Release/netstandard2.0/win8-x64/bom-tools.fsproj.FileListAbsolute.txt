@@ -1,0 +1,8 @@
+C:\Users\darien.shannon\code\DESign\bom-tools\src\bom-tools-library\bin\Release\netstandard2.0\win8-x64\bom-tools.deps.json
+C:\Users\darien.shannon\code\DESign\bom-tools\src\bom-tools-library\bin\Release\netstandard2.0\win8-x64\bom-tools.dll
+C:\Users\darien.shannon\code\DESign\bom-tools\src\bom-tools-library\bin\Release\netstandard2.0\win8-x64\bom-tools.pdb
+C:\Users\darien.shannon\code\DESign\bom-tools\src\bom-tools-library\obj\Release\netstandard2.0\win8-x64\bom-tools.fsprojAssemblyReference.cache
+C:\Users\darien.shannon\code\DESign\bom-tools\src\bom-tools-library\obj\Release\netstandard2.0\win8-x64\bom-tools.AssemblyInfoInputs.cache
+C:\Users\darien.shannon\code\DESign\bom-tools\src\bom-tools-library\obj\Release\netstandard2.0\win8-x64\bom-tools.AssemblyInfo.fs
+C:\Users\darien.shannon\code\DESign\bom-tools\src\bom-tools-library\obj\Release\netstandard2.0\win8-x64\bom-tools.dll
+C:\Users\darien.shannon\code\DESign\bom-tools\src\bom-tools-library\obj\Release\netstandard2.0\win8-x64\bom-tools.pdb

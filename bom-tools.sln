@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F34216D7-34C
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "bom-tools", "src\bom-tools-library\bom-tools.fsproj", "{F917B1F9-2C98-4C6E-8366-4CB8951C20DD}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "bom-tools-gui", "src\bom-tools-gui\bom-tools-gui.fsproj", "{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,8 +34,21 @@ Global
 		{F917B1F9-2C98-4C6E-8366-4CB8951C20DD}.Release|x64.Build.0 = Release|Any CPU
 		{F917B1F9-2C98-4C6E-8366-4CB8951C20DD}.Release|x86.ActiveCfg = Release|Any CPU
 		{F917B1F9-2C98-4C6E-8366-4CB8951C20DD}.Release|x86.Build.0 = Release|Any CPU
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}.Debug|x64.Build.0 = Debug|Any CPU
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}.Debug|x86.Build.0 = Debug|Any CPU
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}.Release|x64.ActiveCfg = Release|Any CPU
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}.Release|x64.Build.0 = Release|Any CPU
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}.Release|x86.ActiveCfg = Release|Any CPU
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F917B1F9-2C98-4C6E-8366-4CB8951C20DD} = {F34216D7-34C8-4AF9-996E-96764254DC93}
+		{4F6DB2A2-8003-45C9-A140-6B78EB2EF930} = {F34216D7-34C8-4AF9-996E-96764254DC93}
 	EndGlobalSection
 EndGlobal

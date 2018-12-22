@@ -1,3 +1,2 @@
 FSharp.Core
-MicrosoftOfficeCore
-Microsoft.Office.Interop.Excel
+DocumentFormat.OpenXml
