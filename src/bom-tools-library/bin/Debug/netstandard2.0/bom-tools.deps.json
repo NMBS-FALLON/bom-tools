@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "965376ebd0d21434185d28e3f5a5467db0bec2a4"
+    "signature": "44e748735d18c03ccded8d3802bdc73d707fde4a"
   },
   "compilationOptions": {},
   "targets": {
@@ -14,6 +14,7 @@
           "Microsoft.NETCore.Platforms": "2.2.0",
           "Microsoft.NETCore.Targets": "2.1.0",
           "NETStandard.Library": "2.0.3",
+          "System.Buffers": "4.5.0",
           "System.Collections": "4.3.0",
           "System.Collections.Concurrent": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
@@ -32,6 +33,7 @@
           "System.Reflection.TypeExtensions": "4.5.1",
           "System.Resources.ResourceManager": "4.3.0",
           "System.Runtime": "4.3.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
           "System.Runtime.Extensions": "4.3.0",
           "System.Runtime.Serialization.Primitives": "4.3.0",
           "System.Runtime.Serialization.Xml": "4.3.0",
@@ -40,10 +42,12 @@
           "System.Text.RegularExpressions": "4.3.0",
           "System.Threading": "4.3.0",
           "System.Threading.Tasks": "4.3.0",
+          "System.Threading.Tasks.Extensions": "4.5.1",
           "System.Xml.ReaderWriter": "4.3.1",
           "System.Xml.XDocument": "4.3.0",
           "System.Xml.XmlDocument": "4.3.0",
-          "System.Xml.XmlSerializer": "4.3.0"
+          "System.Xml.XmlSerializer": "4.3.0",
+          "runtime.native.System": "4.3.1"
         },
         "runtime": {
           "bom-tools.dll": {}
@@ -119,6 +123,20 @@
       "NETStandard.Library/2.0.3": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.2.0"
+        }
+      },
+      "runtime.native.System/4.3.1": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.2.0",
+          "Microsoft.NETCore.Targets": "2.1.0"
+        }
+      },
+      "System.Buffers/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.26515.6"
+          }
         }
       },
       "System.Collections/4.3.0": {
@@ -355,6 +373,14 @@
           "Microsoft.NETCore.Targets": "2.1.0"
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "assemblyVersion": "4.0.4.1",
+            "fileVersion": "4.6.26919.2"
+          }
+        }
+      },
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.2.0",
@@ -457,16 +483,14 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Threading.Tasks.Extensions/4.3.0": {
+      "System.Threading.Tasks.Extensions/4.5.1": {
         "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading.Tasks": "4.3.0"
+          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
         },
         "runtime": {
-          "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll": {
-            "assemblyVersion": "4.1.0.0",
-            "fileVersion": "4.6.24705.1"
+          "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll": {
+            "assemblyVersion": "4.2.0.0",
+            "fileVersion": "4.6.26606.5"
           }
         }
       },
@@ -486,7 +510,7 @@
           "System.Text.Encoding.Extensions": "4.3.0",
           "System.Text.RegularExpressions": "4.3.0",
           "System.Threading.Tasks": "4.3.0",
-          "System.Threading.Tasks.Extensions": "4.3.0"
+          "System.Threading.Tasks.Extensions": "4.5.1"
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.ReaderWriter.dll": {
@@ -606,6 +630,20 @@
       "sha512": "sha512-piZpmDZ46wsc0vT3ClhPr7bXDVa9SZaZB2e05A4zlvfI8vXuumcvmIzeEGTIYhWOTk+vOjmtrQvCD9cvG8EvmQ==",
       "path": "netstandard.library/2.0.3",
       "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "runtime.native.System/4.3.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-K4T2HBcp48al2HPSQI07m4uBaFoiRqYeGKouynd7VnOdqQJUPVPMiqeXCgJqlCTiszxLmOlDEnKewdr2JOMTMA==",
+      "path": "runtime.native.system/4.3.1",
+      "hashPath": "runtime.native.system.4.3.1.nupkg.sha512"
+    },
+    "System.Buffers/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pZokrKIF2hy84JqMMPaMCp8rUxH4nX6tg4jcWQeTcnSxyyNo62nHHJT81knHos5jLXJoFTx36vy9QHqzIZYUpA==",
+      "path": "system.buffers/4.5.0",
+      "hashPath": "system.buffers.4.5.0.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",
@@ -754,6 +792,13 @@
       "path": "system.runtime/4.3.0",
       "hashPath": "system.runtime.4.3.0.nupkg.sha512"
     },
+    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wprSFgext8cwqymChhrBLu62LMg/1u92bU+VOwyfBimSPVFXtsNqEWC92Pf9ofzJFlk4IHmJA75EDJn1b2goAQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.5.2",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+    },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -824,12 +869,12 @@
       "path": "system.threading.tasks/4.3.0",
       "hashPath": "system.threading.tasks.4.3.0.nupkg.sha512"
     },
-    "System.Threading.Tasks.Extensions/4.3.0": {
+    "System.Threading.Tasks.Extensions/4.5.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-npvJkVKl5rKXrtl1Kkm6OhOUaYGEiF9wFbppFRWSMoApKzt2PiPHT2Bb8a5sAWxprvdOAtvaARS9QYMznEUtug==",
-      "path": "system.threading.tasks.extensions/4.3.0",
-      "hashPath": "system.threading.tasks.extensions.4.3.0.nupkg.sha512"
+      "sha512": "sha512-rWRtR+L8P6lrxF6YS3UCBmCLH+6kGmWitoHvIv5AaAbyDXD/k4pZqdseajGm4GnfngmXVssDo6A33WrxCwD/9w==",
+      "path": "system.threading.tasks.extensions/4.5.1",
+      "hashPath": "system.threading.tasks.extensions.4.5.1.nupkg.sha512"
     },
     "System.Xml.ReaderWriter/4.3.1": {
       "type": "package",

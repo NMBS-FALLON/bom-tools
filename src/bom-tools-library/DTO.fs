@@ -95,7 +95,7 @@ type GirderDto =
       NumKbRequired : int option
       ExcessInfo : GirderExcessInfoLine seq
       PanelLocations : float list option
-      AdditionalJoistLoads : AdditionalJoistOnGirderDto seq }
+      GirderExcessInfoLines : GirderExcessInfoLine seq}
 
 
 

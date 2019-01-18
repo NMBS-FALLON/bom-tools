@@ -2,6 +2,68 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.1": {
+      "Avalonia/0.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia.Remote.Protocol": "0.7.0",
+          "JetBrains.Annotations": "10.3.0",
+          "Serilog": "2.5.0",
+          "Serilog.Sinks.Debug": "1.0.0",
+          "Serilog.Sinks.Trace": "2.1.0",
+          "System.ComponentModel.Annotations": "4.5.0",
+          "System.Memory": "4.5.1",
+          "System.Reactive": "4.0.0",
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Avalonia.Animation.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Base.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Controls.dll": {},
+          "lib/netcoreapp2.0/Avalonia.DesignerSupport.dll": {},
+          "lib/netcoreapp2.0/Avalonia.DesktopRuntime.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Diagnostics.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Input.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Interactivity.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Layout.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Logging.Serilog.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Markup.Xaml.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Markup.dll": {},
+          "lib/netcoreapp2.0/Avalonia.OpenGL.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Styling.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Themes.Default.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Visuals.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Avalonia.Animation.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Base.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Controls.dll": {},
+          "lib/netcoreapp2.0/Avalonia.DesignerSupport.dll": {},
+          "lib/netcoreapp2.0/Avalonia.DesktopRuntime.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Diagnostics.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Input.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Interactivity.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Layout.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Logging.Serilog.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Markup.Xaml.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Markup.dll": {},
+          "lib/netcoreapp2.0/Avalonia.OpenGL.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Styling.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Themes.Default.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Visuals.dll": {}
+        },
+        "build": {
+          "build/Avalonia.props": {}
+        }
+      },
+      "Avalonia.Remote.Protocol/0.7.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Avalonia.Remote.Protocol.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Avalonia.Remote.Protocol.dll": {}
+        }
+      },
       "DocumentFormat.OpenXml/2.8.1": {
         "type": "package",
         "dependencies": {
@@ -67,6 +129,15 @@
           "lib/netstandard1.6/zh-Hant/FSharp.Core.resources.dll": {
             "locale": "zh-Hant"
           }
+        }
+      },
+      "JetBrains.Annotations/2018.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {}
         }
       },
       "Microsoft.NETCore.App/2.1.0": {
@@ -275,6 +346,58 @@
           "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
+      "runtime.native.System/4.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.1",
+          "Microsoft.NETCore.Targets": "1.1.3"
+        },
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        }
+      },
+      "Serilog/2.7.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Collections.NonGeneric": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        }
+      },
+      "Serilog.Sinks.Debug/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.5.0",
+          "System.Diagnostics.Debug": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.Sinks.Debug.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.Sinks.Debug.dll": {}
+        }
+      },
+      "Serilog.Sinks.Trace/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.0.0",
+          "System.Diagnostics.TraceSource": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.Trace.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.Trace.dll": {}
+        }
+      },
       "System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -307,6 +430,32 @@
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
         }
       },
+      "System.Collections.NonGeneric/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Collections.NonGeneric.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
+        }
+      },
+      "System.ComponentModel.Annotations/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Diagnostics.Debug/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -327,6 +476,33 @@
         },
         "compile": {
           "ref/netstandard1.0/System.Diagnostics.Tools.dll": {}
+        }
+      },
+      "System.Diagnostics.TraceSource/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "runtime.native.System": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Diagnostics.TraceSource.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
         }
       },
       "System.Diagnostics.Tracing/4.3.0": {
@@ -417,6 +593,15 @@
           "lib/netstandard1.6/System.Linq.dll": {}
         }
       },
+      "System.Memory/4.5.1": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
       "System.Private.DataContractSerialization/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -451,6 +636,19 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Private.DataContractSerialization.dll": {}
+        }
+      },
+      "System.Reactive/4.1.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.WindowsRuntime": "4.3.0",
+          "System.Threading.Tasks.Extensions": "4.5.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Reactive.dll": {}
         }
       },
       "System.Reflection/4.3.0": {
@@ -602,6 +800,18 @@
           "ref/netcoreapp1.1/_._": {}
         }
       },
+      "System.Runtime.InteropServices.WindowsRuntime/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.Runtime.InteropServices.WindowsRuntime.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Runtime.InteropServices.WindowsRuntime.dll": {}
+        }
+      },
       "System.Runtime.Serialization.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -691,18 +901,22 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "System.Threading.Tasks.Extensions/4.3.0": {
+      "System.Threading.Tasks.Extensions/4.5.1": {
         "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading.Tasks": "4.3.0"
-        },
         "compile": {
-          "lib/netstandard1.0/_._": {}
+          "ref/netcoreapp2.1/_._": {}
         },
         "runtime": {
-          "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll": {}
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "System.Xml.ReaderWriter/4.3.1": {
@@ -805,6 +1019,68 @@
       }
     },
     ".NETCoreApp,Version=v2.1/win-x64": {
+      "Avalonia/0.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia.Remote.Protocol": "0.7.0",
+          "JetBrains.Annotations": "10.3.0",
+          "Serilog": "2.5.0",
+          "Serilog.Sinks.Debug": "1.0.0",
+          "Serilog.Sinks.Trace": "2.1.0",
+          "System.ComponentModel.Annotations": "4.5.0",
+          "System.Memory": "4.5.1",
+          "System.Reactive": "4.0.0",
+          "System.ValueTuple": "4.5.0"
+        },
+        "compile": {
+          "lib/netcoreapp2.0/Avalonia.Animation.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Base.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Controls.dll": {},
+          "lib/netcoreapp2.0/Avalonia.DesignerSupport.dll": {},
+          "lib/netcoreapp2.0/Avalonia.DesktopRuntime.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Diagnostics.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Input.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Interactivity.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Layout.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Logging.Serilog.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Markup.Xaml.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Markup.dll": {},
+          "lib/netcoreapp2.0/Avalonia.OpenGL.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Styling.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Themes.Default.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Visuals.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/Avalonia.Animation.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Base.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Controls.dll": {},
+          "lib/netcoreapp2.0/Avalonia.DesignerSupport.dll": {},
+          "lib/netcoreapp2.0/Avalonia.DesktopRuntime.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Diagnostics.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Input.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Interactivity.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Layout.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Logging.Serilog.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Markup.Xaml.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Markup.dll": {},
+          "lib/netcoreapp2.0/Avalonia.OpenGL.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Styling.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Themes.Default.dll": {},
+          "lib/netcoreapp2.0/Avalonia.Visuals.dll": {}
+        },
+        "build": {
+          "build/Avalonia.props": {}
+        }
+      },
+      "Avalonia.Remote.Protocol/0.7.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Avalonia.Remote.Protocol.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Avalonia.Remote.Protocol.dll": {}
+        }
+      },
       "DocumentFormat.OpenXml/2.8.1": {
         "type": "package",
         "dependencies": {
@@ -870,6 +1146,15 @@
           "lib/netstandard1.6/zh-Hant/FSharp.Core.resources.dll": {
             "locale": "zh-Hant"
           }
+        }
+      },
+      "JetBrains.Annotations/2018.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/JetBrains.Annotations.dll": {}
         }
       },
       "Microsoft.NETCore.App/2.1.0": {
@@ -1082,6 +1367,19 @@
         },
         "build": {
           "build/netstandard2.0/NETStandard.Library.targets": {}
+        }
+      },
+      "runtime.native.System/4.3.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.1",
+          "Microsoft.NETCore.Targets": "1.1.3"
+        },
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
         }
       },
       "runtime.win-x64.Microsoft.NETCore.App/2.1.0": {
@@ -1328,6 +1626,45 @@
           "runtimes/win-x64/native/hostfxr.dll": {}
         }
       },
+      "Serilog/2.7.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "System.Collections.NonGeneric": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.dll": {}
+        }
+      },
+      "Serilog.Sinks.Debug/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.5.0",
+          "System.Diagnostics.Debug": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.Sinks.Debug.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.Sinks.Debug.dll": {}
+        }
+      },
+      "Serilog.Sinks.Trace/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Serilog": "2.0.0",
+          "System.Diagnostics.TraceSource": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Serilog.Sinks.Trace.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Serilog.Sinks.Trace.dll": {}
+        }
+      },
       "System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1360,6 +1697,32 @@
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
         }
       },
+      "System.Collections.NonGeneric/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Collections.NonGeneric.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
+        }
+      },
+      "System.ComponentModel.Annotations/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Diagnostics.Debug/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1380,6 +1743,26 @@
         },
         "compile": {
           "ref/netstandard1.0/System.Diagnostics.Tools.dll": {}
+        }
+      },
+      "System.Diagnostics.TraceSource/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "runtime.native.System": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.3/System.Diagnostics.TraceSource.dll": {}
+        },
+        "runtime": {
+          "runtimes/win/lib/netstandard1.3/System.Diagnostics.TraceSource.dll": {}
         }
       },
       "System.Diagnostics.Tracing/4.3.0": {
@@ -1470,6 +1853,15 @@
           "lib/netstandard1.6/System.Linq.dll": {}
         }
       },
+      "System.Memory/4.5.1": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
       "System.Private.DataContractSerialization/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1504,6 +1896,19 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Private.DataContractSerialization.dll": {}
+        }
+      },
+      "System.Reactive/4.1.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.InteropServices.WindowsRuntime": "4.3.0",
+          "System.Threading.Tasks.Extensions": "4.5.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Reactive.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Reactive.dll": {}
         }
       },
       "System.Reflection/4.3.0": {
@@ -1655,6 +2060,18 @@
           "ref/netcoreapp1.1/_._": {}
         }
       },
+      "System.Runtime.InteropServices.WindowsRuntime/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime": "4.3.0"
+        },
+        "compile": {
+          "ref/netstandard1.0/System.Runtime.InteropServices.WindowsRuntime.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Runtime.InteropServices.WindowsRuntime.dll": {}
+        }
+      },
       "System.Runtime.Serialization.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -1744,18 +2161,22 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
-      "System.Threading.Tasks.Extensions/4.3.0": {
+      "System.Threading.Tasks.Extensions/4.5.1": {
         "type": "package",
-        "dependencies": {
-          "System.Collections": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading.Tasks": "4.3.0"
-        },
         "compile": {
-          "lib/netstandard1.0/_._": {}
+          "ref/netcoreapp2.1/_._": {}
         },
         "runtime": {
-          "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll": {}
+          "lib/netcoreapp2.1/_._": {}
+        }
+      },
+      "System.ValueTuple/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "System.Xml.ReaderWriter/4.3.1": {
@@ -1859,6 +2280,176 @@
     }
   },
   "libraries": {
+    "Avalonia/0.7.0": {
+      "sha512": "9DCE4qcFfapGgQvdbJ2cOIGfxvwdBmG1N50P1xcZSne0B1vHbJ4YFU4jhKboQpKou1FOan/EvKucQfBT7N9IVA==",
+      "type": "package",
+      "path": "avalonia/0.7.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "avalonia.0.7.0.nupkg.sha512",
+        "avalonia.nuspec",
+        "build/Avalonia.props",
+        "lib/net461/Avalonia.Animation.dll",
+        "lib/net461/Avalonia.Animation.pdb",
+        "lib/net461/Avalonia.Animation.xml",
+        "lib/net461/Avalonia.Base.dll",
+        "lib/net461/Avalonia.Base.pdb",
+        "lib/net461/Avalonia.Base.xml",
+        "lib/net461/Avalonia.Controls.dll",
+        "lib/net461/Avalonia.Controls.pdb",
+        "lib/net461/Avalonia.Controls.xml",
+        "lib/net461/Avalonia.DesignerSupport.dll",
+        "lib/net461/Avalonia.DesignerSupport.pdb",
+        "lib/net461/Avalonia.DesignerSupport.xml",
+        "lib/net461/Avalonia.DesktopRuntime.dll",
+        "lib/net461/Avalonia.DesktopRuntime.pdb",
+        "lib/net461/Avalonia.DesktopRuntime.xml",
+        "lib/net461/Avalonia.Diagnostics.dll",
+        "lib/net461/Avalonia.Diagnostics.pdb",
+        "lib/net461/Avalonia.Diagnostics.xml",
+        "lib/net461/Avalonia.Input.dll",
+        "lib/net461/Avalonia.Input.pdb",
+        "lib/net461/Avalonia.Input.xml",
+        "lib/net461/Avalonia.Interactivity.dll",
+        "lib/net461/Avalonia.Interactivity.pdb",
+        "lib/net461/Avalonia.Interactivity.xml",
+        "lib/net461/Avalonia.Layout.dll",
+        "lib/net461/Avalonia.Layout.pdb",
+        "lib/net461/Avalonia.Layout.xml",
+        "lib/net461/Avalonia.Logging.Serilog.dll",
+        "lib/net461/Avalonia.Logging.Serilog.pdb",
+        "lib/net461/Avalonia.Logging.Serilog.xml",
+        "lib/net461/Avalonia.Markup.Xaml.dll",
+        "lib/net461/Avalonia.Markup.Xaml.pdb",
+        "lib/net461/Avalonia.Markup.Xaml.xml",
+        "lib/net461/Avalonia.Markup.dll",
+        "lib/net461/Avalonia.Markup.pdb",
+        "lib/net461/Avalonia.Markup.xml",
+        "lib/net461/Avalonia.OpenGL.dll",
+        "lib/net461/Avalonia.OpenGL.pdb",
+        "lib/net461/Avalonia.OpenGL.xml",
+        "lib/net461/Avalonia.Styling.dll",
+        "lib/net461/Avalonia.Styling.pdb",
+        "lib/net461/Avalonia.Styling.xml",
+        "lib/net461/Avalonia.Themes.Default.dll",
+        "lib/net461/Avalonia.Themes.Default.pdb",
+        "lib/net461/Avalonia.Themes.Default.xml",
+        "lib/net461/Avalonia.Visuals.dll",
+        "lib/net461/Avalonia.Visuals.pdb",
+        "lib/net461/Avalonia.Visuals.xml",
+        "lib/netcoreapp2.0/Avalonia.Animation.dll",
+        "lib/netcoreapp2.0/Avalonia.Animation.pdb",
+        "lib/netcoreapp2.0/Avalonia.Animation.xml",
+        "lib/netcoreapp2.0/Avalonia.Base.dll",
+        "lib/netcoreapp2.0/Avalonia.Base.pdb",
+        "lib/netcoreapp2.0/Avalonia.Base.xml",
+        "lib/netcoreapp2.0/Avalonia.Controls.dll",
+        "lib/netcoreapp2.0/Avalonia.Controls.pdb",
+        "lib/netcoreapp2.0/Avalonia.Controls.xml",
+        "lib/netcoreapp2.0/Avalonia.DesignerSupport.dll",
+        "lib/netcoreapp2.0/Avalonia.DesignerSupport.pdb",
+        "lib/netcoreapp2.0/Avalonia.DesignerSupport.xml",
+        "lib/netcoreapp2.0/Avalonia.DesktopRuntime.dll",
+        "lib/netcoreapp2.0/Avalonia.DesktopRuntime.pdb",
+        "lib/netcoreapp2.0/Avalonia.DesktopRuntime.xml",
+        "lib/netcoreapp2.0/Avalonia.Diagnostics.dll",
+        "lib/netcoreapp2.0/Avalonia.Diagnostics.pdb",
+        "lib/netcoreapp2.0/Avalonia.Diagnostics.xml",
+        "lib/netcoreapp2.0/Avalonia.Input.dll",
+        "lib/netcoreapp2.0/Avalonia.Input.pdb",
+        "lib/netcoreapp2.0/Avalonia.Input.xml",
+        "lib/netcoreapp2.0/Avalonia.Interactivity.dll",
+        "lib/netcoreapp2.0/Avalonia.Interactivity.pdb",
+        "lib/netcoreapp2.0/Avalonia.Interactivity.xml",
+        "lib/netcoreapp2.0/Avalonia.Layout.dll",
+        "lib/netcoreapp2.0/Avalonia.Layout.pdb",
+        "lib/netcoreapp2.0/Avalonia.Layout.xml",
+        "lib/netcoreapp2.0/Avalonia.Logging.Serilog.dll",
+        "lib/netcoreapp2.0/Avalonia.Logging.Serilog.pdb",
+        "lib/netcoreapp2.0/Avalonia.Logging.Serilog.xml",
+        "lib/netcoreapp2.0/Avalonia.Markup.Xaml.dll",
+        "lib/netcoreapp2.0/Avalonia.Markup.Xaml.pdb",
+        "lib/netcoreapp2.0/Avalonia.Markup.Xaml.xml",
+        "lib/netcoreapp2.0/Avalonia.Markup.dll",
+        "lib/netcoreapp2.0/Avalonia.Markup.pdb",
+        "lib/netcoreapp2.0/Avalonia.Markup.xml",
+        "lib/netcoreapp2.0/Avalonia.OpenGL.dll",
+        "lib/netcoreapp2.0/Avalonia.OpenGL.pdb",
+        "lib/netcoreapp2.0/Avalonia.OpenGL.xml",
+        "lib/netcoreapp2.0/Avalonia.Styling.dll",
+        "lib/netcoreapp2.0/Avalonia.Styling.pdb",
+        "lib/netcoreapp2.0/Avalonia.Styling.xml",
+        "lib/netcoreapp2.0/Avalonia.Themes.Default.dll",
+        "lib/netcoreapp2.0/Avalonia.Themes.Default.pdb",
+        "lib/netcoreapp2.0/Avalonia.Themes.Default.xml",
+        "lib/netcoreapp2.0/Avalonia.Visuals.dll",
+        "lib/netcoreapp2.0/Avalonia.Visuals.pdb",
+        "lib/netcoreapp2.0/Avalonia.Visuals.xml",
+        "lib/netstandard2.0/Avalonia.Animation.dll",
+        "lib/netstandard2.0/Avalonia.Animation.pdb",
+        "lib/netstandard2.0/Avalonia.Animation.xml",
+        "lib/netstandard2.0/Avalonia.Base.dll",
+        "lib/netstandard2.0/Avalonia.Base.pdb",
+        "lib/netstandard2.0/Avalonia.Base.xml",
+        "lib/netstandard2.0/Avalonia.Controls.dll",
+        "lib/netstandard2.0/Avalonia.Controls.pdb",
+        "lib/netstandard2.0/Avalonia.Controls.xml",
+        "lib/netstandard2.0/Avalonia.DesignerSupport.dll",
+        "lib/netstandard2.0/Avalonia.DesignerSupport.pdb",
+        "lib/netstandard2.0/Avalonia.DesignerSupport.xml",
+        "lib/netstandard2.0/Avalonia.Diagnostics.dll",
+        "lib/netstandard2.0/Avalonia.Diagnostics.pdb",
+        "lib/netstandard2.0/Avalonia.Diagnostics.xml",
+        "lib/netstandard2.0/Avalonia.Input.dll",
+        "lib/netstandard2.0/Avalonia.Input.pdb",
+        "lib/netstandard2.0/Avalonia.Input.xml",
+        "lib/netstandard2.0/Avalonia.Interactivity.dll",
+        "lib/netstandard2.0/Avalonia.Interactivity.pdb",
+        "lib/netstandard2.0/Avalonia.Interactivity.xml",
+        "lib/netstandard2.0/Avalonia.Layout.dll",
+        "lib/netstandard2.0/Avalonia.Layout.pdb",
+        "lib/netstandard2.0/Avalonia.Layout.xml",
+        "lib/netstandard2.0/Avalonia.Logging.Serilog.dll",
+        "lib/netstandard2.0/Avalonia.Logging.Serilog.pdb",
+        "lib/netstandard2.0/Avalonia.Logging.Serilog.xml",
+        "lib/netstandard2.0/Avalonia.Markup.Xaml.dll",
+        "lib/netstandard2.0/Avalonia.Markup.Xaml.pdb",
+        "lib/netstandard2.0/Avalonia.Markup.Xaml.xml",
+        "lib/netstandard2.0/Avalonia.Markup.dll",
+        "lib/netstandard2.0/Avalonia.Markup.pdb",
+        "lib/netstandard2.0/Avalonia.Markup.xml",
+        "lib/netstandard2.0/Avalonia.OpenGL.dll",
+        "lib/netstandard2.0/Avalonia.OpenGL.pdb",
+        "lib/netstandard2.0/Avalonia.OpenGL.xml",
+        "lib/netstandard2.0/Avalonia.Styling.dll",
+        "lib/netstandard2.0/Avalonia.Styling.pdb",
+        "lib/netstandard2.0/Avalonia.Styling.xml",
+        "lib/netstandard2.0/Avalonia.Themes.Default.dll",
+        "lib/netstandard2.0/Avalonia.Themes.Default.pdb",
+        "lib/netstandard2.0/Avalonia.Themes.Default.xml",
+        "lib/netstandard2.0/Avalonia.Visuals.dll",
+        "lib/netstandard2.0/Avalonia.Visuals.pdb",
+        "lib/netstandard2.0/Avalonia.Visuals.xml",
+        "tools/net461/designer/Avalonia.Designer.HostApp.exe",
+        "tools/netcoreapp2.0/designer/Avalonia.Designer.HostApp.dll"
+      ]
+    },
+    "Avalonia.Remote.Protocol/0.7.0": {
+      "sha512": "M+r3isxT+Ib8fjpuJ4IVNG20AQDbSNA+BHun40yU5AHTecy9+7ChFKMUqVt69WLgZiQgxop7P6J6pJgOwpy8CA==",
+      "type": "package",
+      "path": "avalonia.remote.protocol/0.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "avalonia.remote.protocol.0.7.0.nupkg.sha512",
+        "avalonia.remote.protocol.nuspec",
+        "lib/netstandard2.0/Avalonia.Remote.Protocol.dll",
+        "lib/netstandard2.0/Avalonia.Remote.Protocol.pdb",
+        "lib/netstandard2.0/Avalonia.Remote.Protocol.xml"
+      ]
+    },
     "DocumentFormat.OpenXml/2.8.1": {
       "sha512": "VW2mN1bwqsdR7Bfj8RfooeBpmjYOrjGqXh/AWNXDExxzf56YGOMsHs/lo7B2BVudBE7H62QoxNqCmgClgJQ7Iw==",
       "type": "package",
@@ -1938,6 +2529,27 @@
         "lib/netstandard1.6/zh-Hans/FSharp.Core.resources.dll",
         "lib/netstandard1.6/zh-Hant/FSharp.Core.resources.dll",
         "paket-installmodel.cache"
+      ]
+    },
+    "JetBrains.Annotations/2018.2.1": {
+      "sha512": "/aPVHEW93EV1Httnbniz0Cty5+jrXobS27I8QBnIUMe0n51qgxLyQV2AQNko4yXkeOxEdWiZ7bg9+BuMxYbXcA==",
+      "type": "package",
+      "path": "jetbrains.annotations/2018.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "jetbrains.annotations.2018.2.1.nupkg.sha512",
+        "jetbrains.annotations.nuspec",
+        "lib/net20/JetBrains.Annotations.dll",
+        "lib/net20/JetBrains.Annotations.xml",
+        "lib/netstandard1.0/JetBrains.Annotations.deps.json",
+        "lib/netstandard1.0/JetBrains.Annotations.dll",
+        "lib/netstandard1.0/JetBrains.Annotations.xml",
+        "lib/netstandard2.0/JetBrains.Annotations.deps.json",
+        "lib/netstandard2.0/JetBrains.Annotations.dll",
+        "lib/netstandard2.0/JetBrains.Annotations.xml",
+        "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.dll",
+        "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.xml"
       ]
     },
     "Microsoft.NETCore.App/2.1.0": {
@@ -2413,6 +3025,21 @@
         "paket-installmodel.cache"
       ]
     },
+    "runtime.native.System/4.3.1": {
+      "sha512": "K4T2HBcp48al2HPSQI07m4uBaFoiRqYeGKouynd7VnOdqQJUPVPMiqeXCgJqlCTiszxLmOlDEnKewdr2JOMTMA==",
+      "type": "package",
+      "path": "runtime.native.system/4.3.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/netstandard1.0/_._",
+        "paket-installmodel.cache",
+        "runtime.native.system.4.3.1.nupkg.sha512",
+        "runtime.native.system.nuspec"
+      ]
+    },
     "runtime.win-x64.Microsoft.NETCore.App/2.1.0": {
       "sha512": "1NgFJX+Gz/t80NPchuvTBTqbGV4uWOCdI37LLjHZ4K5juQXDG9hQMTDPi5FF1z2ogmb0c8+xSBs3OpGp2Dzjng==",
       "type": "package",
@@ -2685,6 +3312,63 @@
         "version.txt"
       ]
     },
+    "Serilog/2.7.1": {
+      "sha512": "5eS6AD4hesOYvlwYqjntLaOonDnEiY22QiMUKueJHPrm5vm1k4tzXgOgCb2mJoMnj6l5Wt6AXV5liXzXymvarg==",
+      "type": "package",
+      "path": "serilog/2.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Serilog.dll",
+        "lib/net45/Serilog.pdb",
+        "lib/net45/Serilog.xml",
+        "lib/net46/Serilog.dll",
+        "lib/net46/Serilog.pdb",
+        "lib/net46/Serilog.xml",
+        "lib/netstandard1.0/Serilog.dll",
+        "lib/netstandard1.0/Serilog.pdb",
+        "lib/netstandard1.0/Serilog.xml",
+        "lib/netstandard1.3/Serilog.dll",
+        "lib/netstandard1.3/Serilog.pdb",
+        "lib/netstandard1.3/Serilog.xml",
+        "serilog.2.7.1.nupkg.sha512",
+        "serilog.nuspec"
+      ]
+    },
+    "Serilog.Sinks.Debug/1.0.1": {
+      "sha512": "nE5wvw9+J/V4lA+rEkFUETGjBabK8IlLQY5Z9KDzoo5LvILC4vhTOXLs7DGYs8h5juIf2nLZnVxHDXf404FqEQ==",
+      "type": "package",
+      "path": "serilog.sinks.debug/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Serilog.Sinks.Debug.dll",
+        "lib/net45/Serilog.Sinks.Debug.xml",
+        "lib/net46/Serilog.Sinks.Debug.dll",
+        "lib/net46/Serilog.Sinks.Debug.xml",
+        "lib/netstandard1.0/Serilog.Sinks.Debug.dll",
+        "lib/netstandard1.0/Serilog.Sinks.Debug.xml",
+        "lib/netstandard2.0/Serilog.Sinks.Debug.dll",
+        "lib/netstandard2.0/Serilog.Sinks.Debug.xml",
+        "serilog.sinks.debug.1.0.1.nupkg.sha512",
+        "serilog.sinks.debug.nuspec"
+      ]
+    },
+    "Serilog.Sinks.Trace/2.1.0": {
+      "sha512": "VgJNH1F3UOrmI8m32WFS9x5cxmYOrSfc+mLxXFmgN3bG1zg0jRf7jgbBB15NoJjfAn0nJMZgP0Hqx/w0bxKGvQ==",
+      "type": "package",
+      "path": "serilog.sinks.trace/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Serilog.Sinks.Trace.dll",
+        "lib/net45/Serilog.Sinks.Trace.xml",
+        "lib/netstandard1.3/Serilog.Sinks.Trace.dll",
+        "lib/netstandard1.3/Serilog.Sinks.Trace.xml",
+        "serilog.sinks.trace.2.1.0.nupkg.sha512",
+        "serilog.sinks.trace.nuspec"
+      ]
+    },
     "System.Collections/4.3.0": {
       "sha512": "3Dcj85/TBdVpL5Zr+gEEBUuFe2icOnLalmEh9hfck1PTYbbyWuZgh4fmm2ysCLTrqLQw6t3TgTyJ+VLp+Qb+Lw==",
       "type": "package",
@@ -2823,6 +3507,135 @@
         "system.collections.concurrent.nuspec"
       ]
     },
+    "System.Collections.NonGeneric/4.3.0": {
+      "sha512": "+tfi2dkkUXenY8QOR57b9kN52FYsp18igchS3LxSKLsJ/lLzJA8bz+bRNYOJ6Uj4zhFIhbZxli0Gp4K7ob3LPw==",
+      "type": "package",
+      "path": "system.collections.nongeneric/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Collections.NonGeneric.dll",
+        "lib/netstandard1.3/System.Collections.NonGeneric.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "paket-installmodel.cache",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Collections.NonGeneric.dll",
+        "ref/netstandard1.3/System.Collections.NonGeneric.dll",
+        "ref/netstandard1.3/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/de/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/es/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/fr/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/it/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/ja/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/ko/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/ru/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/zh-hans/System.Collections.NonGeneric.xml",
+        "ref/netstandard1.3/zh-hant/System.Collections.NonGeneric.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.collections.nongeneric.4.3.0.nupkg.sha512",
+        "system.collections.nongeneric.nuspec"
+      ]
+    },
+    "System.ComponentModel.Annotations/4.5.0": {
+      "sha512": "dgr6NsUniLAohiLPl7pCzy0s244KCVLysAdEL2PnzfE5iUjl1flXxw37DRoTrNrc8RjRFsok8D2ZgZvBgg4xMg==",
+      "type": "package",
+      "path": "system.componentmodel.annotations/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net461/System.ComponentModel.Annotations.dll",
+        "lib/netcore50/System.ComponentModel.Annotations.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.0/System.ComponentModel.Annotations.dll",
+        "lib/portable-net45+win8/_._",
+        "lib/uap10.0.16299/_._",
+        "lib/win8/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "paket-installmodel.cache",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net461/System.ComponentModel.Annotations.dll",
+        "ref/net461/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/System.ComponentModel.Annotations.dll",
+        "ref/netcore50/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/de/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/es/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/fr/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/it/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ja/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ko/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ru/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard2.0/System.ComponentModel.Annotations.dll",
+        "ref/netstandard2.0/System.ComponentModel.Annotations.xml",
+        "ref/portable-net45+win8/_._",
+        "ref/uap10.0.16299/_._",
+        "ref/win8/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.annotations.4.5.0.nupkg.sha512",
+        "system.componentmodel.annotations.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Diagnostics.Debug/4.3.0": {
       "sha512": "ZUhUOdqmaG5Jk3Xdb8xi5kIyQYAA4PnTNlHx1mu9ZY3qv4ELIdKbnL/akbGaKi2RnNUWaZsAs31rvzFdewTj2g==",
       "type": "package",
@@ -2946,6 +3759,48 @@
         "ref/xamarinwatchos10/_._",
         "system.diagnostics.tools.4.3.0.nupkg.sha512",
         "system.diagnostics.tools.nuspec"
+      ]
+    },
+    "System.Diagnostics.TraceSource/4.3.0": {
+      "sha512": "VnYp1NxGx8Ww731y2LJ1vpfb/DKVNKEZ8Jsh5SgQTZREL/YpWRArgh9pI8CDLmgHspZmLL697CaLvH85qQpRiw==",
+      "type": "package",
+      "path": "system.diagnostics.tracesource/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Diagnostics.TraceSource.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "paket-installmodel.cache",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Diagnostics.TraceSource.dll",
+        "ref/netstandard1.3/System.Diagnostics.TraceSource.dll",
+        "ref/netstandard1.3/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/de/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/es/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/fr/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/it/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/ja/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/ko/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/ru/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/zh-hans/System.Diagnostics.TraceSource.xml",
+        "ref/netstandard1.3/zh-hant/System.Diagnostics.TraceSource.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.3/System.Diagnostics.TraceSource.dll",
+        "runtimes/win/lib/net46/System.Diagnostics.TraceSource.dll",
+        "runtimes/win/lib/netstandard1.3/System.Diagnostics.TraceSource.dll",
+        "system.diagnostics.tracesource.4.3.0.nupkg.sha512",
+        "system.diagnostics.tracesource.nuspec"
       ]
     },
     "System.Diagnostics.Tracing/4.3.0": {
@@ -3363,6 +4218,32 @@
         "system.linq.nuspec"
       ]
     },
+    "System.Memory/4.5.1": {
+      "sha512": "y3VAuJX3Bj9YwtIlBJNj7PWauBxSoYR9IXASCE47f21pQxmAGXIuH6QNokyQkYPUcp7upy+h9250tOJhYyFxhw==",
+      "type": "package",
+      "path": "system.memory/4.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "paket-installmodel.cache",
+        "ref/netcoreapp2.1/_._",
+        "ref/netstandard1.1/System.Memory.dll",
+        "ref/netstandard1.1/System.Memory.xml",
+        "ref/netstandard2.0/System.Memory.dll",
+        "ref/netstandard2.0/System.Memory.xml",
+        "system.memory.4.5.1.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Private.DataContractSerialization/4.3.0": {
       "sha512": "EPEfltNCMI+oylW1i9KkmadHOUmic9LgHcznjwE2raroouSu8VnDZkxkQXNUcx8t75MqwQ0nRAEMWQ7d9x4s0g==",
       "type": "package",
@@ -3376,6 +4257,28 @@
         "runtimes/aot/lib/netcore50/System.Private.DataContractSerialization.dll",
         "system.private.datacontractserialization.4.3.0.nupkg.sha512",
         "system.private.datacontractserialization.nuspec"
+      ]
+    },
+    "System.Reactive/4.1.2": {
+      "sha512": "QRxhdvoP51UuXZbSzcIiFu3/MCSAlR8rz3G/XMcm3b+a2zOC5ropDVaZrjXAO+7VF04Aqk4MCcLEdhxTfWVlZw==",
+      "type": "package",
+      "path": "system.reactive/4.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net46/System.Reactive.dll",
+        "lib/net46/System.Reactive.xml",
+        "lib/netstandard2.0/System.Reactive.dll",
+        "lib/netstandard2.0/System.Reactive.xml",
+        "lib/uap10.0.16299/System.Reactive.dll",
+        "lib/uap10.0.16299/System.Reactive.pri",
+        "lib/uap10.0.16299/System.Reactive.xml",
+        "lib/uap10.0/System.Reactive.dll",
+        "lib/uap10.0/System.Reactive.pri",
+        "lib/uap10.0/System.Reactive.xml",
+        "paket-installmodel.cache",
+        "system.reactive.4.1.2.nupkg.sha512",
+        "system.reactive.nuspec"
       ]
     },
     "System.Reflection/4.3.0": {
@@ -4137,6 +5040,68 @@
         "system.runtime.interopservices.nuspec"
       ]
     },
+    "System.Runtime.InteropServices.WindowsRuntime/4.3.0": {
+      "sha512": "J4GUi3xZQLUBasNwZnjrffN8i5wpHrBtZoLG+OhRyGo/+YunMRWWtwoMDlUAIdmX0uRfpHIBDSV6zyr3yf00TA==",
+      "type": "package",
+      "path": "system.runtime.interopservices.windowsruntime/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/System.Runtime.InteropServices.WindowsRuntime.dll",
+        "lib/netstandard1.3/System.Runtime.InteropServices.WindowsRuntime.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios1/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "paket-installmodel.cache",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.Runtime.InteropServices.WindowsRuntime.dll",
+        "ref/netcore50/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/de/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/es/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/fr/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/it/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/ja/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/ko/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/ru/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/zh-hans/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/zh-hant/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/System.Runtime.InteropServices.WindowsRuntime.dll",
+        "ref/netstandard1.0/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/de/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/es/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/fr/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/it/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/ja/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/ko/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/ru/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/zh-hans/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/zh-hant/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Runtime.InteropServices.WindowsRuntime.dll",
+        "system.runtime.interopservices.windowsruntime.4.3.0.nupkg.sha512",
+        "system.runtime.interopservices.windowsruntime.nuspec"
+      ]
+    },
     "System.Runtime.Serialization.Primitives/4.3.0": {
       "sha512": "W2RABNim/JGfd0pTlVGwr1YZfs5Y6u0QB/NWDkKbvPCRXYXazBtEhI2Idk4Tv6SWXa07/5m8LRVQ3zc01oYEmg==",
       "type": "package",
@@ -4642,21 +5607,89 @@
         "system.threading.tasks.nuspec"
       ]
     },
-    "System.Threading.Tasks.Extensions/4.3.0": {
-      "sha512": "npvJkVKl5rKXrtl1Kkm6OhOUaYGEiF9wFbppFRWSMoApKzt2PiPHT2Bb8a5sAWxprvdOAtvaARS9QYMznEUtug==",
+    "System.Threading.Tasks.Extensions/4.5.1": {
+      "sha512": "rWRtR+L8P6lrxF6YS3UCBmCLH+6kGmWitoHvIv5AaAbyDXD/k4pZqdseajGm4GnfngmXVssDo6A33WrxCwD/9w==",
       "type": "package",
-      "path": "system.threading.tasks.extensions/4.3.0",
+      "path": "system.threading.tasks.extensions/4.5.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/netcoreapp2.1/_._",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.dll",
         "lib/netstandard1.0/System.Threading.Tasks.Extensions.xml",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "lib/netstandard2.0/System.Threading.Tasks.Extensions.xml",
         "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Threading.Tasks.Extensions.xml",
-        "system.threading.tasks.extensions.4.3.0.nupkg.sha512",
-        "system.threading.tasks.extensions.nuspec"
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "paket-installmodel.cache",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/netcoreapp2.1/_._",
+        "ref/netstandard1.0/System.Threading.Tasks.Extensions.dll",
+        "ref/netstandard1.0/System.Threading.Tasks.Extensions.xml",
+        "ref/netstandard2.0/System.Threading.Tasks.Extensions.dll",
+        "ref/netstandard2.0/System.Threading.Tasks.Extensions.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.threading.tasks.extensions.4.5.1.nupkg.sha512",
+        "system.threading.tasks.extensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.ValueTuple/4.5.0": {
+      "sha512": "AqYjMEAoT4TvQVUj1AWuLz/njsH98oLdaJZMfQUCEq11/zTYPwOC/4gaUIWuYSpy61+LFh+7l5OKTqgdS4DqMA==",
+      "type": "package",
+      "path": "system.valuetuple/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.ValueTuple.dll",
+        "lib/net461/System.ValueTuple.xml",
+        "lib/net47/System.ValueTuple.dll",
+        "lib/net47/System.ValueTuple.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.ValueTuple.dll",
+        "lib/netstandard1.0/System.ValueTuple.xml",
+        "lib/netstandard2.0/_._",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "paket-installmodel.cache",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.ValueTuple.dll",
+        "ref/net47/System.ValueTuple.dll",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard2.0/_._",
+        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.valuetuple.4.5.0.nupkg.sha512",
+        "system.valuetuple.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Xml.ReaderWriter/4.3.1": {
@@ -4913,20 +5946,31 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "Avalonia >= 0.7.0",
+      "Avalonia.Remote.Protocol >= 0.7.0",
       "DocumentFormat.OpenXml >= 2.8.1",
       "FSharp.Core >= 4.5.4",
+      "JetBrains.Annotations >= 2018.2.1",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.NETCore.Platforms >= 2.2.0",
       "Microsoft.NETCore.Targets >= 2.1.0",
+      "Serilog >= 2.7.1",
+      "Serilog.Sinks.Debug >= 1.0.1",
+      "Serilog.Sinks.Trace >= 2.1.0",
       "System.Collections >= 4.3.0",
       "System.Collections.Concurrent >= 4.3.0",
+      "System.Collections.NonGeneric >= 4.3.0",
+      "System.ComponentModel.Annotations >= 4.5.0",
       "System.Diagnostics.Debug >= 4.3.0",
       "System.Diagnostics.Tools >= 4.3.0",
+      "System.Diagnostics.TraceSource >= 4.3.0",
       "System.Globalization >= 4.3.0",
       "System.IO >= 4.3.0",
       "System.IO.Packaging >= 4.5.0",
       "System.Linq >= 4.3.0",
+      "System.Memory >= 4.5.1",
       "System.Private.DataContractSerialization >= 4.3.0",
+      "System.Reactive >= 4.1.2",
       "System.Reflection >= 4.3.0",
       "System.Reflection.Emit >= 4.3.0",
       "System.Reflection.Emit.ILGeneration >= 4.3.0",
@@ -4937,6 +5981,7 @@
       "System.Resources.ResourceManager >= 4.3.0",
       "System.Runtime >= 4.3.0",
       "System.Runtime.Extensions >= 4.3.0",
+      "System.Runtime.InteropServices.WindowsRuntime >= 4.3.0",
       "System.Runtime.Serialization.Primitives >= 4.3.0",
       "System.Runtime.Serialization.Xml >= 4.3.0",
       "System.Text.Encoding >= 4.3.0",
@@ -4944,10 +5989,13 @@
       "System.Text.RegularExpressions >= 4.3.0",
       "System.Threading >= 4.3.0",
       "System.Threading.Tasks >= 4.3.0",
+      "System.Threading.Tasks.Extensions >= 4.5.1",
+      "System.ValueTuple >= 4.5.0",
       "System.Xml.ReaderWriter >= 4.3.1",
       "System.Xml.XDocument >= 4.3.0",
       "System.Xml.XmlDocument >= 4.3.0",
-      "System.Xml.XmlSerializer >= 4.3.0"
+      "System.Xml.XmlSerializer >= 4.3.0",
+      "runtime.native.System >= 4.3.1"
     ]
   },
   "packageFolders": {
@@ -4989,6 +6037,14 @@
     "frameworks": {
       "netcoreapp2.1": {
         "dependencies": {
+          "Avalonia": {
+            "target": "Package",
+            "version": "[0.7.0, )"
+          },
+          "Avalonia.Remote.Protocol": {
+            "target": "Package",
+            "version": "[0.7.0, )"
+          },
           "DocumentFormat.OpenXml": {
             "target": "Package",
             "version": "[2.8.1, )"
@@ -4996,6 +6052,10 @@
           "FSharp.Core": {
             "target": "Package",
             "version": "[4.5.4, )"
+          },
+          "JetBrains.Annotations": {
+            "target": "Package",
+            "version": "[2018.2.1, )"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
@@ -5011,6 +6071,18 @@
             "target": "Package",
             "version": "[2.1.0, )"
           },
+          "Serilog": {
+            "target": "Package",
+            "version": "[2.7.1, )"
+          },
+          "Serilog.Sinks.Debug": {
+            "target": "Package",
+            "version": "[1.0.1, )"
+          },
+          "Serilog.Sinks.Trace": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
           "System.Collections": {
             "target": "Package",
             "version": "[4.3.0, )"
@@ -5019,11 +6091,23 @@
             "target": "Package",
             "version": "[4.3.0, )"
           },
+          "System.Collections.NonGeneric": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          },
+          "System.ComponentModel.Annotations": {
+            "target": "Package",
+            "version": "[4.5.0, )"
+          },
           "System.Diagnostics.Debug": {
             "target": "Package",
             "version": "[4.3.0, )"
           },
           "System.Diagnostics.Tools": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          },
+          "System.Diagnostics.TraceSource": {
             "target": "Package",
             "version": "[4.3.0, )"
           },
@@ -5043,9 +6127,17 @@
             "target": "Package",
             "version": "[4.3.0, )"
           },
+          "System.Memory": {
+            "target": "Package",
+            "version": "[4.5.1, )"
+          },
           "System.Private.DataContractSerialization": {
             "target": "Package",
             "version": "[4.3.0, )"
+          },
+          "System.Reactive": {
+            "target": "Package",
+            "version": "[4.1.2, )"
           },
           "System.Reflection": {
             "target": "Package",
@@ -5087,6 +6179,10 @@
             "target": "Package",
             "version": "[4.3.0, )"
           },
+          "System.Runtime.InteropServices.WindowsRuntime": {
+            "target": "Package",
+            "version": "[4.3.0, )"
+          },
           "System.Runtime.Serialization.Primitives": {
             "target": "Package",
             "version": "[4.3.0, )"
@@ -5115,6 +6211,14 @@
             "target": "Package",
             "version": "[4.3.0, )"
           },
+          "System.Threading.Tasks.Extensions": {
+            "target": "Package",
+            "version": "[4.5.1, )"
+          },
+          "System.ValueTuple": {
+            "target": "Package",
+            "version": "[4.5.0, )"
+          },
           "System.Xml.ReaderWriter": {
             "target": "Package",
             "version": "[4.3.1, )"
@@ -5130,6 +6234,10 @@
           "System.Xml.XmlSerializer": {
             "target": "Package",
             "version": "[4.3.0, )"
+          },
+          "runtime.native.System": {
+            "target": "Package",
+            "version": "[4.3.1, )"
           }
         },
         "imports": [

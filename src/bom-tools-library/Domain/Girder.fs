@@ -31,7 +31,31 @@ type Girder =
       NumKbRequired : int option
       PanelLocations : float seq
       AdditionalJoists : AdditionalLoad seq }
-    static member Parse(girderDto : GirderDto) =
+
+
+module Girder =
+
+    type private LineType =
+    | ALine
+    | PanelLine
+    | BLine
+    | AandBLine
+    | NoGeometryLine
+    | Unknown
+
+        static member Parse (excessGirderLine : GirderExcessInfoLine) =
+            let hasA = excessGirderLine.AFt.IsSome || excessGirderLine.AIn.IsSome
+            let hasB = excessGirderLine.BFt.IsSome || excessGirderLine.BFt.IsSome
+            let hasPanel = excessGirderLine.PanelLengthFt.IsSome || excessGirderLine.PanelLengthIn.IsSome
+            match hasA, hasPanel, hasB with
+            | true, true, false -> ALine
+            | false, true, false -> PanelLine
+            | false, true, true -> BLine
+            | true, true, true -> AandBLine
+            | false, false, false -> NoGeometryLine
+            | _ -> Unknown
+
+    let Parse(girderDto : GirderDto) =
         let mark =
             match girderDto.Mark with
             | Some mark -> mark
@@ -164,8 +188,91 @@ type Girder =
             | Some loc when loc.ToUpper().Contains("P") -> PanelPointLoad
             | _ -> LocatedLoad
 
+        let (|Single|Multiple|Empty|) seq = 
+            match seq |> Seq.length with
+            | 0 -> Empty
+            | 1 -> Single
+            | _ -> Multiple
+
+(*
+        let (|ALine|PanelLine|BLine|AandBLine|NoGeometryLine|Error|) (excessGirderLine : GirderExcessInfoLine) =
+            let hasA = excessGirderLine.AFt.IsSome || excessGirderLine.AIn.IsSome
+            let hasB = excessGirderLine.BFt.IsSome || excessGirderLine.BFt.IsSome
+            let hasPanel = excessGirderLine.PanelLengthFt.IsSome || excessGirderLine.PanelLengthIn.IsSome
+            match hasA, hasPanel, hasB with
+            | true, true, false -> ALine
+            | false, true, false -> PanelLine
+            | false, true, true -> BLine
+            | true, true, true -> AandBLine
+            | false, false, false -> NoGeometryLine
+            | _ -> Error
+*)
+
+
+
+        let verifyAdditionalJoists (lines : GirderExcessInfoLine seq) =
+            let lineTypes = lines |> Seq.map (fun l -> l |> LineType.Parse)
+            match lineTypes with
+            | Empty -> Error "Girder is missing geometry lines; check girder geometry"
+            | Single ->
+                let line = lineTypes |> Seq.head
+                match line with
+                | AandBLine -> Ok lines
+                | _ -> Error "Girder geoemtry is either missing A or B info; check girder geometry"
+            | Multiple ->
+                let aLineIndex =
+                    lineTypes |> Seq.tryFindIndex (fun l -> match l with | ALine -> true |_ -> false)
+                let bLineIndex =
+                    lineTypes |> Seq.tryFindIndex (fun l -> match l with | BLine -> true |_ -> false)
+
+                let bLineIsAfterALineAndBothExist =
+                    match aLineIndex with
+                    | Some ai ->
+                        match bLineIndex with
+                        | Some bi ->
+                            ai < bi
+                        | None -> false
+                    | None -> false
+
+                let onlyNoGeometryLinesAfterBLine =
+                    match bLineIndex with
+                    | Some i ->
+                        let asList = lineTypes |> Seq.toList
+                        let afterBLine = asList.[i..]
+                        afterBLine
+                        |> List.map (fun l -> match l with | NoGeometryLine -> true | _ -> false)
+                        |> List.contains false
+                    | None -> false
+
+                let linesAreInProperFormat =
+                    bLineIsAfterALineAndBothExist
+                    && onlyNoGeometryLinesAfterBLine
+
+                if linesAreInProperFormat then
+                    Ok lines
+                else
+                    Error "Girder Geometry is not in a proper format; check girder geometry"
+
+        
+
         let additionalJoists =
-            girderDto.AdditionalJoistLoads
+
+            let verifiedLines =
+                match girderDto.GirderExcessInfoLines |> verifyAdditionalJoists with
+                | Ok lines -> lines
+                | Error msg ->
+                    match girderDto.Mark with
+                    | Some mark -> failwith (sprintf "Error parsing mark %s : %s." mark msg)
+                    | _ -> failwith "Error: Parsing a girder without a defined 'Mark'"
+                
+            let getAdditionalJoistsOnGirders (lines : GirderExcessInfoLine seq) =
+                lines
+                |> Seq.map (fun l -> l.AdditionalJoistLoads)
+                |> Seq.concat
+                |> Seq.filter (fun l -> l.LoadValue.IsSome || l.LocationFt.IsSome || l.LocationIn.IsSome)
+
+            let additionalJoistLoads = getAdditionalJoistsOnGirders verifiedLines
+            additionalJoistLoads
             |> Seq.filter (fun a -> a.LoadValue.IsSome)
             |> Seq.map (fun a ->
                    match a with
@@ -262,3 +369,5 @@ type Girder =
               AdditionalJoists = additionalJoists }
 
         girder
+
+

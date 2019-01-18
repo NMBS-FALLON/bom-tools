@@ -358,12 +358,6 @@ let GetGirders(bom : Bom) =
                 getPanelLocations (firstPanel :: (panelLocations |> List.append newLines)) tail
         getPanelLocations [] lines |> List.filter (fun panelLocation -> panelLocation <> 0.0)
 
-    let getAdditionalJoistsOnGirders (lines : GirderExcessInfoLine seq) =
-        lines
-        |> Seq.map (fun l -> l.AdditionalJoistLoads)
-        |> Seq.concat
-        |> Seq.filter (fun l -> l.LoadValue.IsSome || l.LocationFt.IsSome || l.LocationIn.IsSome)
-
     let panelLocationDict =
         let groupedPanelLocations =
             girderExcessInfoDtos
@@ -379,6 +373,9 @@ let GetGirders(bom : Bom) =
         |> Seq.map
                (fun row ->
                let mark = row |> bom.TryGetCellValueAtColumnAsString "A"
+               let thisMarksExcessInfoDtos =
+                    girderExcessInfoDtos
+                    |> Seq.filter (fun line -> line.Mark = mark)
                { GirderDto.Mark = mark
                  GirderDto.Quantity = row |> bom.TryGetCellValueAtColumnWithType "B"
                  GirderDto.GirderSize = row |> bom.TryGetCellValueAtColumnAsString "C"
@@ -411,12 +408,18 @@ let GetGirders(bom : Bom) =
                  GirderDto.NumKbRequired = row |> bom.TryGetCellValueAtColumnWithType<int> "AA"
                  GirderDto.ExcessInfo = girderExcessInfoDtos
                  GirderDto.PanelLocations = getPanelLocations mark
-                 GirderDto.AdditionalJoistLoads =
-                     girderExcessInfoDtos |> getAdditionalJoistsOnGirders })
+                 GirderDto.GirderExcessInfoLines = thisMarksExcessInfoDtos})
     girderDtos
     |> Seq.filter
            (fun girderDto ->
            girderDto.Mark.IsSome || girderDto.Quantity.IsSome || girderDto.GirderSize.IsSome)
     |> Seq.map (fun girderDto -> Girder.Parse girderDto)
 
+let GetJob (bom : Bom) =
+  { Name = "No Name Yet"
+    GeneralNotes = GetGeneralNotes bom
+    ParticularNotes = GetParticularNotes bom
+    Loads = GetLoads bom
+    Girders = GetGirders bom
+    Joists = GetJoists bom }
 
