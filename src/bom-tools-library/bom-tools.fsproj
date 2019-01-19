@@ -8,11 +8,13 @@
     <Compile Include="SpreadSheetML.Helpers.fs" />
     <Compile Include="DTO.fs" />
     <Compile Include="Domain\Note.fs" />
-    <Compile Include="Domain\Load.fs"/>
-    <Compile Include="Domain\Joist.fs"/>
-    <Compile Include="Domain\Girder.fs"/>
+    <Compile Include="Domain\Load.fs" />
+    <Compile Include="Domain\Joist.fs" />
+    <Compile Include="Domain\Girder.fs" />
     <Compile Include="Domain\Job.fs" />
     <Compile Include="Import.fs" />
+    <Compile Include="NotesToExcel.fs" />
+    <Compile Include="AdjustLoads.fs" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

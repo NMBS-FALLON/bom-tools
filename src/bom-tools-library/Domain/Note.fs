@@ -6,17 +6,18 @@ open FSharp.Core
 
 type Note =
     { ID : string
-      Notes : string seq }
+      Note : string }
     static member Parse(noteDto : NoteDto) =
         let id =
             match noteDto.ID with
             | Some s -> s
             | None -> failwith "There is a note that does not have a 'NAME'." // I dont think this is even possible...
 
-        let notes =
+        let note =
             noteDto.Notes
             |> Seq.filter (fun noteDto -> noteDto.IsSome && noteDto.Value <> "")
             |> Seq.map (fun noteDto -> noteDto.Value)
+            |> Seq.fold (fun acc item -> acc + " " + item) ""
 
         { ID = id
-          Notes = notes }
+          Note = note }

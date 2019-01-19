@@ -30,7 +30,7 @@ type Girder =
       LoadNotes : string seq
       NumKbRequired : int option
       PanelLocations : float seq
-      AdditionalJoists : AdditionalLoad seq }
+      AdditionalJoists : Result<AdditionalLoad seq, string> }
 
 
 module Girder =
@@ -78,7 +78,7 @@ module Girder =
             | Some ft, None -> ft
             | None, Some inch -> inch
             | None, None ->
-                failwith (sprintf "Mark %s does not have an overal length" mark)
+                failwith (sprintf "Mark %s does not have an overall length" mark)
 
         let tcxlLength =
             match girderDto.TcxlLengthFt, girderDto.TcxlLengthIn with
@@ -188,7 +188,7 @@ module Girder =
             | Some loc when loc.ToUpper().Contains("P") -> PanelPointLoad
             | _ -> LocatedLoad
 
-        let (|Single|Multiple|Empty|) seq = 
+        let (|Single|Multiple|Empty|) seq =
             match seq |> Seq.length with
             | 0 -> Empty
             | 1 -> Single
@@ -211,7 +211,14 @@ module Girder =
 
 
         let verifyAdditionalJoists (lines : GirderExcessInfoLine seq) =
-            let lineTypes = lines |> Seq.map (fun l -> l |> LineType.Parse)
+            let lineTypes =
+                lines
+                |> Seq.map (fun l -> l |> LineType.Parse)
+                |> Seq.filter
+                    (fun l ->
+                        match l with
+                        | NoGeometryLine -> false
+                        | _ -> true )
             match lineTypes with
             | Empty -> Error "Girder is missing geometry lines; check girder geometry"
             | Single ->
@@ -259,90 +266,97 @@ module Girder =
 
             let verifiedLines =
                 match girderDto.GirderExcessInfoLines |> verifyAdditionalJoists with
-                | Ok lines -> lines
+                | Ok lines -> Ok lines
                 | Error msg ->
                     match girderDto.Mark with
-                    | Some mark -> failwith (sprintf "Error parsing mark %s : %s." mark msg)
-                    | _ -> failwith "Error: Parsing a girder without a defined 'Mark'"
+                    | Some mark -> Error (sprintf "Error getting geometry from mark %s : %s." mark msg)
+                    | _ -> Error "Error: Parsing a girder without a defined 'Mark'"
                 
-            let getAdditionalJoistsOnGirders (lines : GirderExcessInfoLine seq) =
-                lines
-                |> Seq.map (fun l -> l.AdditionalJoistLoads)
-                |> Seq.concat
-                |> Seq.filter (fun l -> l.LoadValue.IsSome || l.LocationFt.IsSome || l.LocationIn.IsSome)
+            let getAdditionalJoistsOnGirders (lines : Result<GirderExcessInfoLine seq, string>) =
+                match lines with
+                | Ok lines ->
+                    lines
+                    |> Seq.map (fun l -> l.AdditionalJoistLoads)
+                    |> Seq.concat
+                    |> Seq.filter (fun l -> l.LoadValue.IsSome || l.LocationFt.IsSome || l.LocationIn.IsSome)
+                    |> Ok
+                | Error msg -> Error msg
 
             let additionalJoistLoads = getAdditionalJoistsOnGirders verifiedLines
-            additionalJoistLoads
-            |> Seq.filter (fun a -> a.LoadValue.IsSome)
-            |> Seq.map (fun a ->
-                   match a with
-                   | PanelPointLoad ->
-                       let panelNum =
-                           match a.LocationIn with
-                           | Some panelNum ->
-                               FSharp.Core.int.Parse(panelNum.Replace("#", ""))
-                           | None ->
-                               failwith
-                                   (sprintf
-                                        "Mark %s has an 'additional load' that is missing the panel number"
-                                        mark)
-
-                       let panelLocation =
-                           match panelLocations |> Seq.tryItem panelNum with
-                           | Some loc -> loc
-                           | None ->
-                               failwith
-                                   "Mark %s has an 'additional load' that is located at a non-existant panel point"
-
-                       let loadValue =
-                           match a.LoadValue with
-                           | Some v -> v
-                           | None ->
-                               failwith
-                                   (sprintf
-                                        "Mark %s has an 'additional load' that does not have a load value"
-                                        mark)
-
-                       { Location = panelLocation
-                         Load = loadValue }
-                   | LocatedLoad ->
-                       let locationFt =
-                           match a.LocationFt with
-                           | Some ft when ft = "" -> 0.0
-                           | Some ft ->
-                               match FSharp.Core.float.TryParse ft with
-                               | true, v -> v
-                               | false, _ ->
-                                   failwith
-                                       (sprintf
-                                            "Mark %s has an 'additional load' that does not have a proper Location Ft"
+            match additionalJoistLoads with
+            | Ok additionalJoistLoads ->
+                additionalJoistLoads
+                |> Seq.filter (fun a -> a.LoadValue.IsSome)
+                |> Seq.map (fun a ->
+                        match a with
+                        | PanelPointLoad ->
+                            let panelNum =
+                                match a.LocationIn with
+                                | Some panelNum ->
+                                    FSharp.Core.int.Parse(panelNum.Replace("#", ""))
+                                | None ->
+                                    failwith
+                                        (sprintf
+                                            "Mark %s has an 'additional load' that is missing the panel number"
                                             mark)
-                           | None -> 0.0
 
-                       let locationIn =
-                           match a.LocationIn with
-                           | Some inch when inch = "" -> 0.0
-                           | Some inch ->
-                               match FSharp.Core.float.TryParse inch with
-                               | true, v -> v / 12.0
-                               | false, _ ->
-                                   failwith
-                                       (sprintf
-                                            "Mark %s has an 'additional load' that does not have a proper Location In"
+                            let panelLocation =
+                                match panelLocations |> Seq.tryItem panelNum with
+                                | Some loc -> loc
+                                | None ->
+                                    failwith
+                                        "Mark %s has an 'additional load' that is located at a non-existant panel point"
+
+                            let loadValue =
+                                match a.LoadValue with
+                                | Some v -> v
+                                | None ->
+                                    failwith
+                                        (sprintf
+                                            "Mark %s has an 'additional load' that does not have a load value"
                                             mark)
-                           | None -> 0.0
 
-                       let loadValue =
-                           match a.LoadValue with
-                           | Some v -> v
-                           | None ->
-                               failwith
-                                   (sprintf
-                                        "Mark %s has an 'additional load' that does not have a load value"
-                                        mark)
+                            { Location = panelLocation
+                              Load = loadValue }
+                        | LocatedLoad ->
+                            let locationFt =
+                                match a.LocationFt with
+                                | Some ft when ft = "" -> 0.0
+                                | Some ft ->
+                                    match FSharp.Core.float.TryParse ft with
+                                    | true, v -> v
+                                    | false, _ ->
+                                        failwith
+                                            (sprintf
+                                                "Mark %s has an 'additional load' that does not have a proper Location Ft"
+                                                mark)
+                                | None -> 0.0
 
-                       { Location = locationFt + locationIn
-                         Load = loadValue })
+                            let locationIn =
+                                match a.LocationIn with
+                                | Some inch when inch = "" -> 0.0
+                                | Some inch ->
+                                    match FSharp.Core.float.TryParse inch with
+                                    | true, v -> v / 12.0
+                                    | false, _ ->
+                                        failwith
+                                            (sprintf
+                                                "Mark %s has an 'additional load' that does not have a proper Location In"
+                                                mark)
+                                | None -> 0.0
+
+                            let loadValue =
+                                match a.LoadValue with
+                                | Some v -> v
+                                | None ->
+                                    failwith
+                                        (sprintf
+                                            "Mark %s has an 'additional load' that does not have a load value"
+                                            mark)
+
+                            { Location = locationFt + locationIn
+                              Load = loadValue }) |> Ok
+            | Error msg -> Error msg
 
         let girder =
             { Mark = mark

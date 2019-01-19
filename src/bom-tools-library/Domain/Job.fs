@@ -26,16 +26,9 @@ module Job =
 
   
   let tryGetGroups (pattern : string) (note : Note) =
-    let fullNote =
-      match note.Notes |> Seq.isEmpty with
-      | true -> None
-      | false -> Some (note.Notes |> Seq.reduce (fun first second -> first + " " + second))
-    fullNote
-    |> Option.bind
-      (fun note -> 
-        match note with
+        match note.Note with
         | Regex pattern groups -> Some groups
-        | _ -> None )
+        | _ -> None 
 
   let tryGetNotes pattern (notes : Note seq) =
     let possibleNotes =
@@ -77,6 +70,22 @@ module Job =
         | "%" -> Percent liveLoadValue
         | _ -> failwith "This shouldnt happen"
       Some liveLoadNote
+
+  let getJoistLoads (joist: Joist) (job: Job) =
+    job.Loads
+    |> Seq.filter (fun load -> joist.LoadNotes |> Seq.contains load.ID)
+
+  let getGirderLoads (girder: Girder) (job: Job) =
+    job.Loads
+    |> Seq.filter (fun load -> girder.LoadNotes |> Seq.contains load.ID)
+
+  let getJoistParticularNotes (joist: Joist) (job: Job) =
+    job.ParticularNotes
+    |> Seq.filter (fun note -> joist.SpecialNotes |> Seq.contains note.ID)
+
+  let getGirderParticularNotes (girder: Girder) (job: Job) =
+    job.ParticularNotes
+    |> Seq.filter (fun note -> girder.SpecialNotes |> Seq.contains note.ID)
 
 
     

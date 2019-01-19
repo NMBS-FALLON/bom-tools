@@ -12,6 +12,10 @@ let handleWithFailwith result =
     match result with
     | Ok v -> v
     | Error s -> failwith s
+let handleWithPrint result =
+    match result with
+    | Ok v -> v
+    | Error s -> printfn "Error: %s." s
 
 let getLoadSheets (document : SpreadsheetDocument) = document |> GetSheetsByPartialName "L ("
 let getGeneralNotesSheets (document : SpreadsheetDocument) =
