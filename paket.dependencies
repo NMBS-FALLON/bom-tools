@@ -5,6 +5,7 @@ nuget FSharp.Core
 nuget DocumentFormat.OpenXml
 nuget Avalonia
 nuget System.Reactive
+nuget EPPlus
 
 
 // [ FAKE GROUP ]

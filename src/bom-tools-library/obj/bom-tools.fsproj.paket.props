@@ -6,6 +6,59 @@
         <PaketPropsLoaded>true</PaketPropsLoaded>
     </PropertyGroup>
 
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'xamarinios'))">
+        <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing">
+            <Version>2.2</Version>
+        </PackageReference>
+        <PackageReference Include="Newtonsoft.Json">
+            <Version>12.0.1</Version>
+        </PackageReference>
+        <PackageReference Include="System.Drawing.Common">
+            <Version>4.5.1</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Primitives">
+            <Version>2.2</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions">
+            <Version>2.2</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Configuration">
+            <Version>2.2</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.FileProviders.Abstractions">
+            <Version>2.2</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.FileProviders.Physical">
+            <Version>2.2</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions">
+            <Version>2.2</Version>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Extensions.Configuration.Json">
+            <Version>2.2</Version>
+        </PackageReference>
+        <PackageReference Include="System.Security.Cryptography.Pkcs">
+            <Version>4.5.2</Version>
+        </PackageReference>
+        <PackageReference Include="System.Text.Encoding.CodePages">
+            <Version>4.5.1</Version>
+        </PackageReference>
+        <PackageReference Include="System.Security.Claims">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Collections.NonGeneric">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.ComponentModel.TypeConverter">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Data.Common">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Xml.XPath.XmlDocument">
+            <Version>4.3</Version>
+        </PackageReference>
+    </ItemGroup>
     <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'net461') OR ('$(TargetFramework)' == 'net462') OR ('$(TargetFramework)' == 'net463') OR ('$(TargetFramework)' == 'net47') OR ('$(TargetFramework)' == 'net471') OR ('$(TargetFramework)' == 'net472') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101'))">
         <PackageReference Include="Microsoft.NETCore.Platforms">
             <Version>2.2</Version>
@@ -14,6 +67,14 @@
     <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101'))">
         <PackageReference Include="Microsoft.NETCore.Targets">
             <Version>2.1</Version>
+        </PackageReference>
+        <PackageReference Include="System.Runtime.Handles">
+            <Version>4.3</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30'))">
+        <PackageReference Include="Microsoft.Win32.SystemEvents">
+            <Version>4.5</Version>
         </PackageReference>
     </ItemGroup>
     <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'net461') OR ('$(TargetFramework)' == 'net462') OR ('$(TargetFramework)' == 'net463') OR ('$(TargetFramework)' == 'net47') OR ('$(TargetFramework)' == 'net471') OR ('$(TargetFramework)' == 'net472') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinios') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
@@ -24,7 +85,7 @@
             <Version>4.3</Version>
         </PackageReference>
     </ItemGroup>
-    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16'))">
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300'))">
         <PackageReference Include="runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl">
             <Version>4.3.3</Version>
         </PackageReference>
@@ -42,9 +103,6 @@
         </PackageReference>
         <PackageReference Include="runtime.fedora.28-x64.runtime.native.System.Security.Cryptography.OpenSsl">
             <Version>4.3.3</Version>
-        </PackageReference>
-        <PackageReference Include="runtime.native.System.Net.Http">
-            <Version>4.3.1</Version>
         </PackageReference>
         <PackageReference Include="runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl">
             <Version>4.3.3</Version>
@@ -79,29 +137,47 @@
         <PackageReference Include="runtime.ubuntu.18.04-x64.runtime.native.System.Security.Cryptography.OpenSsl">
             <Version>4.3.3</Version>
         </PackageReference>
-        <PackageReference Include="runtime.native.System.Security.Cryptography.OpenSsl">
-            <Version>4.3.3</Version>
-        </PackageReference>
-        <PackageReference Include="System.Diagnostics.Tracing">
-            <Version>4.3</Version>
-        </PackageReference>
         <PackageReference Include="System.Globalization.Calendars">
             <Version>4.3</Version>
         </PackageReference>
-        <PackageReference Include="System.Net.Primitives">
+        <PackageReference Include="System.Security.Principal">
             <Version>4.3</Version>
         </PackageReference>
-        <PackageReference Include="System.Net.WebHeaderCollection">
+        <PackageReference Include="System.ComponentModel.Primitives">
             <Version>4.3</Version>
         </PackageReference>
-        <PackageReference Include="System.Globalization.Extensions">
+        <PackageReference Include="System.Security.Cryptography.Csp">
             <Version>4.3</Version>
         </PackageReference>
-        <PackageReference Include="System.Diagnostics.DiagnosticSource">
+        <PackageReference Include="System.Xml.XPath">
+            <Version>4.3</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300'))">
+        <PackageReference Include="runtime.native.System">
+            <Version>4.3.1</Version>
+        </PackageReference>
+        <PackageReference Include="System.Runtime.InteropServices">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Collections.Concurrent">
+            <Version>4.3</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16'))">
+        <PackageReference Include="runtime.native.System.IO.Compression">
+            <Version>4.3.2</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300'))">
+        <PackageReference Include="runtime.native.System.Net.Http">
+            <Version>4.3.1</Version>
+        </PackageReference>
+        <PackageReference Include="runtime.native.System.Security.Cryptography.OpenSsl">
+            <Version>4.3.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Security.Cryptography.OpenSsl">
             <Version>4.5.1</Version>
-        </PackageReference>
-        <PackageReference Include="System.ObjectModel">
-            <Version>4.3</Version>
         </PackageReference>
         <PackageReference Include="System.Security.Cryptography.Primitives">
             <Version>4.3</Version>
@@ -112,80 +188,26 @@
         <PackageReference Include="System.Security.Cryptography.Algorithms">
             <Version>4.3.1</Version>
         </PackageReference>
-        <PackageReference Include="System.Security.Cryptography.Cng">
-            <Version>4.5</Version>
-        </PackageReference>
-        <PackageReference Include="System.Security.Cryptography.Csp">
-            <Version>4.3</Version>
-        </PackageReference>
-        <PackageReference Include="System.Security.Cryptography.OpenSsl">
-            <Version>4.5</Version>
-        </PackageReference>
-        <PackageReference Include="System.Security.Cryptography.X509Certificates">
-            <Version>4.3.2</Version>
-        </PackageReference>
-        <PackageReference Include="System.Net.Http">
-            <Version>4.3.4</Version>
-        </PackageReference>
-    </ItemGroup>
-    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300'))">
-        <PackageReference Include="runtime.native.System">
-            <Version>4.3.1</Version>
-        </PackageReference>
-    </ItemGroup>
-    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16'))">
-        <PackageReference Include="runtime.native.System.IO.Compression">
-            <Version>4.3.2</Version>
-        </PackageReference>
-        <PackageReference Include="System.Runtime.InteropServices">
-            <Version>4.3</Version>
-        </PackageReference>
     </ItemGroup>
     <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'net461') OR ('$(TargetFramework)' == 'net462') OR ('$(TargetFramework)' == 'net463') OR ('$(TargetFramework)' == 'net47') OR ('$(TargetFramework)' == 'net471') OR ('$(TargetFramework)' == 'net472') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'xamarinios'))">
         <PackageReference Include="System.Buffers">
             <Version>4.5</Version>
         </PackageReference>
     </ItemGroup>
-    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
-        <PackageReference Include="System.Runtime">
-            <Version>4.3</Version>
-        </PackageReference>
-        <PackageReference Include="System.Collections">
-            <Version>4.3</Version>
-        </PackageReference>
-        <PackageReference Include="System.Globalization">
-            <Version>4.3</Version>
-        </PackageReference>
-        <PackageReference Include="System.Runtime.Extensions">
-            <Version>4.3</Version>
-        </PackageReference>
-        <PackageReference Include="System.Resources.ResourceManager">
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300'))">
+        <PackageReference Include="System.ComponentModel">
             <Version>4.3</Version>
         </PackageReference>
     </ItemGroup>
-    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
-        <PackageReference Include="System.Diagnostics.Tools">
-            <Version>4.3</Version>
-        </PackageReference>
-        <PackageReference Include="System.Reflection">
-            <Version>4.3</Version>
-        </PackageReference>
-        <PackageReference Include="System.Reflection.Extensions">
-            <Version>4.3</Version>
-        </PackageReference>
-        <PackageReference Include="System.Linq">
-            <Version>4.3</Version>
-        </PackageReference>
-        <PackageReference Include="System.Text.RegularExpressions">
-            <Version>4.3</Version>
-        </PackageReference>
-    </ItemGroup>
-    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'net46') OR ('$(TargetFramework)' == 'net461') OR ('$(TargetFramework)' == 'net462') OR ('$(TargetFramework)' == 'net463') OR ('$(TargetFramework)' == 'net47') OR ('$(TargetFramework)' == 'net471') OR ('$(TargetFramework)' == 'net472') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
-        <PackageReference Include="System.IO.FileSystem.Primitives">
-            <Version>4.3</Version>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'net461') OR ('$(TargetFramework)' == 'net462') OR ('$(TargetFramework)' == 'net463') OR ('$(TargetFramework)' == 'net47') OR ('$(TargetFramework)' == 'net471') OR ('$(TargetFramework)' == 'net472') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300'))">
+        <PackageReference Include="System.Numerics.Vectors">
+            <Version>4.5</Version>
         </PackageReference>
     </ItemGroup>
     <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20'))">
+        <PackageReference Include="System.Reflection.TypeExtensions">
+            <Version>4.5.1</Version>
+        </PackageReference>
         <PackageReference Include="System.Reflection.Primitives">
             <Version>4.3</Version>
         </PackageReference>
@@ -201,19 +223,10 @@
         <PackageReference Include="System.Reflection.Emit.Lightweight">
             <Version>4.3</Version>
         </PackageReference>
-        <PackageReference Include="System.Reflection.TypeExtensions">
-            <Version>4.5.1</Version>
-        </PackageReference>
         <PackageReference Include="System.Runtime.Serialization.Primitives">
             <Version>4.3</Version>
         </PackageReference>
-        <PackageReference Include="System.Collections.Concurrent">
-            <Version>4.3</Version>
-        </PackageReference>
         <PackageReference Include="System.Xml.XDocument">
-            <Version>4.3</Version>
-        </PackageReference>
-        <PackageReference Include="System.Xml.XmlDocument">
             <Version>4.3</Version>
         </PackageReference>
         <PackageReference Include="System.Xml.XmlSerializer">
@@ -223,17 +236,19 @@
             <Version>4.3</Version>
         </PackageReference>
     </ItemGroup>
-    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'net46') OR ('$(TargetFramework)' == 'net461') OR ('$(TargetFramework)' == 'net462') OR ('$(TargetFramework)' == 'net463') OR ('$(TargetFramework)' == 'net47') OR ('$(TargetFramework)' == 'net471') OR ('$(TargetFramework)' == 'net472') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinios'))">
-        <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
-            <Version>4.5.2</Version>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
+        <PackageReference Include="System.Runtime">
+            <Version>4.3.1</Version>
         </PackageReference>
-    </ItemGroup>
-    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101'))">
-        <PackageReference Include="System.Runtime.Handles">
+        <PackageReference Include="System.Collections">
             <Version>4.3</Version>
         </PackageReference>
-    </ItemGroup>
-    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
+        <PackageReference Include="System.Globalization">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Runtime.Extensions">
+            <Version>4.3.1</Version>
+        </PackageReference>
         <PackageReference Include="System.Text.Encoding">
             <Version>4.3</Version>
         </PackageReference>
@@ -243,16 +258,70 @@
         <PackageReference Include="System.IO">
             <Version>4.3</Version>
         </PackageReference>
+        <PackageReference Include="System.IO.FileSystem">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Resources.ResourceManager">
+            <Version>4.3</Version>
+        </PackageReference>
         <PackageReference Include="System.Xml.ReaderWriter">
             <Version>4.3.1</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
+        <PackageReference Include="System.Diagnostics.Tools">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Reflection.Extensions">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Text.RegularExpressions">
+            <Version>4.3</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16'))">
+        <PackageReference Include="System.Diagnostics.Tracing">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Net.Primitives">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Net.WebHeaderCollection">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Diagnostics.DiagnosticSource">
+            <Version>4.5.1</Version>
+        </PackageReference>
+        <PackageReference Include="System.ObjectModel">
+            <Version>4.3</Version>
+        </PackageReference>
+        <PackageReference Include="System.Net.Http">
+            <Version>4.3.4</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'net46') OR ('$(TargetFramework)' == 'net461') OR ('$(TargetFramework)' == 'net462') OR ('$(TargetFramework)' == 'net463') OR ('$(TargetFramework)' == 'net47') OR ('$(TargetFramework)' == 'net471') OR ('$(TargetFramework)' == 'net472') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
+        <PackageReference Include="System.IO.FileSystem.Primitives">
+            <Version>4.3</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'net46') OR ('$(TargetFramework)' == 'net461') OR ('$(TargetFramework)' == 'net462') OR ('$(TargetFramework)' == 'net463') OR ('$(TargetFramework)' == 'net47') OR ('$(TargetFramework)' == 'net471') OR ('$(TargetFramework)' == 'net472') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinios'))">
+        <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
+            <Version>4.5.2</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'net461') OR ('$(TargetFramework)' == 'net462') OR ('$(TargetFramework)' == 'net463') OR ('$(TargetFramework)' == 'net47') OR ('$(TargetFramework)' == 'net471') OR ('$(TargetFramework)' == 'net472') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'xamarinios'))">
+        <PackageReference Include="System.Memory">
+            <Version>4.5.2</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300'))">
+        <PackageReference Include="System.Security.Cryptography.Cng">
+            <Version>4.5</Version>
         </PackageReference>
     </ItemGroup>
     <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
         <PackageReference Include="System.Console">
             <Version>4.3.1</Version>
-        </PackageReference>
-        <PackageReference Include="System.Runtime.Numerics">
-            <Version>4.3</Version>
         </PackageReference>
         <PackageReference Include="System.Linq.Expressions">
             <Version>4.3</Version>
@@ -273,16 +342,36 @@
             <Version>4.3</Version>
         </PackageReference>
     </ItemGroup>
-    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
-        <PackageReference Include="System.IO.FileSystem">
-            <Version>4.3</Version>
-        </PackageReference>
-        <PackageReference Include="System.IO.Compression">
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'xamarinios') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
+        <PackageReference Include="System.Reflection">
             <Version>4.3</Version>
         </PackageReference>
     </ItemGroup>
     <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
+        <PackageReference Include="System.Linq">
+            <Version>4.3</Version>
+        </PackageReference>
         <PackageReference Include="System.Threading">
+            <Version>4.3</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20'))">
+        <PackageReference Include="System.Globalization.Extensions">
+            <Version>4.3</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
+        <PackageReference Include="System.Runtime.Numerics">
+            <Version>4.3</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20'))">
+        <PackageReference Include="System.Collections.Specialized">
+            <Version>4.3</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
+        <PackageReference Include="System.IO.Compression">
             <Version>4.3</Version>
         </PackageReference>
     </ItemGroup>
@@ -291,22 +380,35 @@
             <Version>4.3</Version>
         </PackageReference>
     </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'xamarinios'))">
+        <PackageReference Include="System.Security.Cryptography.X509Certificates">
+            <Version>4.3.2</Version>
+        </PackageReference>
+    </ItemGroup>
     <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'net46') OR ('$(TargetFramework)' == 'net461') OR ('$(TargetFramework)' == 'net462') OR ('$(TargetFramework)' == 'net463') OR ('$(TargetFramework)' == 'net47') OR ('$(TargetFramework)' == 'net471') OR ('$(TargetFramework)' == 'net472') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinios'))">
         <PackageReference Include="System.Threading.Tasks.Extensions">
-            <Version>4.5.1</Version>
+            <Version>4.5.2</Version>
         </PackageReference>
     </ItemGroup>
     <ItemGroup Condition="($(DesignTimeBuild) == true)">
         <PackageReference Include="FSharp.Core">
-            <Version>4.5.4</Version>
+            <Version>4.6.2</Version>
         </PackageReference>
         <PackageReference Include="DocumentFormat.OpenXml">
-            <Version>2.8.1</Version>
+            <Version>2.9.1</Version>
+        </PackageReference>
+        <PackageReference Include="EPPlus">
+            <Version>4.5.3.1</Version>
         </PackageReference>
     </ItemGroup>
     <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'net46') OR ('$(TargetFramework)' == 'net461') OR ('$(TargetFramework)' == 'net462') OR ('$(TargetFramework)' == 'net463') OR ('$(TargetFramework)' == 'net47') OR ('$(TargetFramework)' == 'net471') OR ('$(TargetFramework)' == 'net472') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinios') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
         <PackageReference Include="System.IO.Packaging">
             <Version>4.5</Version>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'xamarinios'))">
+        <PackageReference Include="System.Xml.XmlDocument">
+            <Version>4.3</Version>
         </PackageReference>
     </ItemGroup>
     <ItemGroup Condition="($(DesignTimeBuild) == true) AND (('$(TargetFramework)' == 'monoandroid7.0') OR ('$(TargetFramework)' == 'monoandroid70') OR ('$(TargetFramework)' == 'monoandroid7.1') OR ('$(TargetFramework)' == 'monoandroid71') OR ('$(TargetFramework)' == 'monoandroid8.0') OR ('$(TargetFramework)' == 'monoandroid80') OR ('$(TargetFramework)' == 'monoandroid8.1') OR ('$(TargetFramework)' == 'monoandroid81') OR ('$(TargetFramework)' == 'monoandroid9.0') OR ('$(TargetFramework)' == 'monoandroid90') OR ('$(TargetFramework)' == 'monotouch') OR ('$(TargetFramework)' == 'netcoreapp1.0') OR ('$(TargetFramework)' == 'netcoreapp10') OR ('$(TargetFramework)' == 'netcoreapp1.1') OR ('$(TargetFramework)' == 'netcoreapp11') OR ('$(TargetFramework)' == 'netcoreapp2.0') OR ('$(TargetFramework)' == 'netcoreapp20') OR ('$(TargetFramework)' == 'netcoreapp2.1') OR ('$(TargetFramework)' == 'netcoreapp21') OR ('$(TargetFramework)' == 'netcoreapp2.2') OR ('$(TargetFramework)' == 'netcoreapp22') OR ('$(TargetFramework)' == 'netcoreapp3.0') OR ('$(TargetFramework)' == 'netcoreapp30') OR ('$(TargetFramework)' == 'netstandard1.3') OR ('$(TargetFramework)' == 'netstandard13') OR ('$(TargetFramework)' == 'netstandard1.4') OR ('$(TargetFramework)' == 'netstandard14') OR ('$(TargetFramework)' == 'netstandard1.5') OR ('$(TargetFramework)' == 'netstandard15') OR ('$(TargetFramework)' == 'netstandard1.6') OR ('$(TargetFramework)' == 'netstandard16') OR ('$(TargetFramework)' == 'netstandard2.0') OR ('$(TargetFramework)' == 'netstandard20') OR ('$(TargetFramework)' == 'uap10.0') OR ('$(TargetFramework)' == 'uap100') OR ('$(TargetFramework)' == 'uap10.0.15138') OR ('$(TargetFramework)' == 'uap10015138') OR ('$(TargetFramework)' == 'uap10.0.16299') OR ('$(TargetFramework)' == 'uap10016299') OR ('$(TargetFramework)' == 'uap10.0.16300') OR ('$(TargetFramework)' == 'uap10016300') OR ('$(TargetFramework)' == 'uap10.1') OR ('$(TargetFramework)' == 'uap101') OR ('$(TargetFramework)' == 'xamarinios') OR ('$(TargetFramework)' == 'xamarinmac') OR ('$(TargetFramework)' == 'xamarintvos') OR ('$(TargetFramework)' == 'xamarinwatchos'))">
