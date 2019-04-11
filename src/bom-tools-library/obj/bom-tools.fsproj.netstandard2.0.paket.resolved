@@ -1,7 +1,10 @@
 Microsoft.Extensions.FileSystemGlobbing,2.2,Transitive,Main,false,true
 Microsoft.NETCore.Platforms,2.2,Transitive,Main,false,true
 Microsoft.NETCore.Targets,2.1,Transitive,Main,false,true
+Microsoft.Office.Interop.Excel,15.0.4795.1000,Direct,Main,false,true
+MicrosoftOfficeCore,15.0,Direct,Main,false,true
 Newtonsoft.Json,12.0.1,Transitive,Main,false,true
+Ookii.Dialogs.WinForms,1.0,Direct,Main,false,true
 runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl,4.3.3,Transitive,Main,false,true
 runtime.debian.9-x64.runtime.native.System.Security.Cryptography.OpenSsl,4.3.3,Transitive,Main,false,true
 runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl,4.3.3,Transitive,Main,false,true

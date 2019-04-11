@@ -6,6 +6,9 @@ nuget DocumentFormat.OpenXml
 nuget Avalonia
 nuget System.Reactive
 nuget EPPlus
+nuget Microsoft.Office.Interop.Excel
+nuget MicrosoftOfficeCore
+nuget Ookii.Dialogs.WinForms
 
 
 // [ FAKE GROUP ]

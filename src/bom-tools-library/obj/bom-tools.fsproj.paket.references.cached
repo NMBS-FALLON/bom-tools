@@ -1,3 +1,6 @@
 FSharp.Core
 DocumentFormat.OpenXml
 EPPlus
+Microsoft.Office.Interop.Excel
+MicrosoftOfficeCore
+Ookii.Dialogs.WinForms

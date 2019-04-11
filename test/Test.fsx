@@ -1,3 +1,4 @@
+open System.IO
 #I __SOURCE_DIRECTORY__
 #I @"../packages"
 #r @"NETStandard.Library.NETFRamework/build/net461/lib/netstandard.dll"
@@ -5,7 +6,7 @@
 #r @"System.IO.Packaging/lib/net46/System.IO.Packaging.dll"
 #r @"EPPlus/lib/net40/EPPlus.dll"
 #r @"WindowsBase"
-#r @"../src/bom-tools-library/bin/debug/netstandard2.0/bom-tools.dll"
+#r @"../src/bom-tools-library/bin/Release/netstandard2.0/bom-tools.dll"
 
 
 open DESign.BomTools
@@ -17,10 +18,14 @@ open DESign.BomTools.NotesToExcel
 
 
 let bomFileName = @"C:\Users\darien.shannon\code\bom-tools\testBOMs\testbom1.xlsm"
+let bomOutPutPath = @"C:\Users\darien.shannon\code\bom-tools\testBOMs\BOM Notes.xlsx"
 
 let getBomInfo () =
     use bom = GetBom bomFileName
     let job = GetJob bom
-    createBomInfoSheet job @"C:\Users\darien.shannon\code\bom-tools\test\bomInfo.xlsx"
+    use package = CreateBomInfoSheetFromJob job
+    using (new FileStream(bomOutPutPath, FileMode.Create)) (fun fs -> package.SaveAs(fs))
+
+
                 
 getBomInfo()

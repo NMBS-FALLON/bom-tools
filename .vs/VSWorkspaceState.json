@@ -4,13 +4,11 @@
     "\\.paket",
     "\\src",
     "\\src\\bom-tools-library",
-    "\\src\\bom-tools-library\\bin",
     "\\src\\bom-tools-library\\bin\\Debug",
     "\\src\\bom-tools-library\\bin\\Debug\\netstandard2.0",
-    "\\src\\bom-tools-library\\bin\\Debug\\netstandard2.0\\publish",
     "\\src\\bom-tools-library\\bin\\Release",
     "\\src\\bom-tools-library\\bin\\Release\\netstandard2.0"
   ],
-  "SelectedNode": "\\src\\bom-tools-library\\NotesToExcel.fs",
+  "SelectedNode": "\\src\\bom-tools-library\\SeismicSeperator.fs",
   "PreviewInSolutionExplorer": false
 }

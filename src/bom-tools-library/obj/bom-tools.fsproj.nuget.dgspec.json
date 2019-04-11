@@ -96,6 +96,14 @@
               "target": "Package",
               "version": "[2.1.0, )"
             },
+            "Microsoft.Office.Interop.Excel": {
+              "target": "Package",
+              "version": "[15.0.4795.1000, )"
+            },
+            "MicrosoftOfficeCore": {
+              "target": "Package",
+              "version": "[15.0.0, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
@@ -105,6 +113,10 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Ookii.Dialogs.WinForms": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             },
             "System.Buffers": {
               "target": "Package",
