@@ -3,12 +3,9 @@ source https://www.nuget.org/api/v2
 nuget NETStandard.Library.NETFramework
 nuget FSharp.Core
 nuget DocumentFormat.OpenXml
-nuget Avalonia
-nuget System.Reactive
 nuget EPPlus
 nuget Microsoft.Office.Interop.Excel
 nuget MicrosoftOfficeCore
-nuget Ookii.Dialogs.WinForms
 
 
 // [ FAKE GROUP ]

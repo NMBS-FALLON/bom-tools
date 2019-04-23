@@ -1,3 +1,0 @@
-C:\Users\darien.shannon\code\bom-tools\src\bom-tools-gui\obj\Release\netcoreapp2.1\bom-tools-gui.fsprojAssemblyReference.cache
-C:\Users\darien.shannon\code\bom-tools\src\bom-tools-gui\obj\Release\netcoreapp2.1\bom-tools-gui.AssemblyInfoInputs.cache
-C:\Users\darien.shannon\code\bom-tools\src\bom-tools-gui\obj\Release\netcoreapp2.1\bom-tools-gui.AssemblyInfo.fs

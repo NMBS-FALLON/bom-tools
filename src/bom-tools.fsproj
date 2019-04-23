@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>bom_tools</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Helpers.fs" />
+    <Compile Include="ArrayExtensions.fs" />
+    <Compile Include="SpreadSheetML.Helpers.fs" />
+    <Compile Include="DTO.fs" />
+    <Compile Include="Domain\Note.fs" />
+    <Compile Include="Domain\Load.fs" />
+    <Compile Include="Domain\Joist.fs" />
+    <Compile Include="Domain\Girder.fs" />
+    <Compile Include="Domain\Job.fs" />
+    <Compile Include="Import.fs" />
+    <Compile Include="NotesToExcel.fs" />
+    <Compile Include="AdjustLoads.fs" />
+    <Compile Include="SeismicSeperator.fs" />
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>

@@ -6,7 +6,7 @@ open System.IO
 #r @"System.IO.Packaging/lib/net46/System.IO.Packaging.dll"
 #r @"EPPlus/lib/net40/EPPlus.dll"
 #r @"WindowsBase"
-#r @"../src/bom-tools-library/bin/Release/netstandard2.0/bom-tools.dll"
+#r @"../src/bin/Release/netstandard2.0/bom-tools.dll"
 
 
 open DESign.BomTools
@@ -15,7 +15,7 @@ open DESign.BomTools.Domain
 open DESign.BomTools.Dto
 open DESign.SpreadSheetML.Helpers
 open DESign.BomTools.NotesToExcel
-
+open DESign.BomTools.AdjustLoads
 
 let bomFileName = @"C:\Users\darien.shannon\code\bom-tools\testBOMs\testbom1.xlsm"
 let bomOutPutPath = @"C:\Users\darien.shannon\code\bom-tools\testBOMs\BOM Notes.xlsx"
@@ -25,6 +25,16 @@ let getBomInfo () =
     let job = GetJob bom
     use package = CreateBomInfoSheetFromJob job
     using (new FileStream(bomOutPutPath, FileMode.Create)) (fun fs -> package.SaveAs(fs))
+
+let jobWithLc3Loads () =
+    use bom = GetBom bomFileName
+    let job = GetJob bom
+    let newJob = GetSeperatedSeismicLoads job
+    newJob.Loads
+    |> Seq.filter (fun load -> load.ID = "G42")
+    |> Seq.toList
+
+jobWithLc3Loads()
 
 
                 
