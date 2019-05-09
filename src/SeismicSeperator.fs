@@ -341,18 +341,20 @@ type Girder =
          (this.TcxlLengthFt + this.TcxlLengthIn/12.0) -
           (this.TcxrLengthFt + this.TcxlLengthIn/12.0)
 
-    member this.UDL_PDL (liveLoadUNO : string) (liveLoadSpecialNotes : Note List)=
+    member this.PDL (liveLoadUNO : string) (liveLoadSpecialNotes : Note List)=
         let size = this.GirderSize
         let sizeAsArray = size.Split( [|"G"; "BG"; "VG"; "N"; "K"|], StringSplitOptions.RemoveEmptyEntries)
-        let load = sizeAsArray.[2]
+        let TL = float sizeAsArray.[2]
+
+        let N = int sizeAsArray.[1]
+
+        (*
         let minSpace =
             let geometry = this.GirderGeometry
             let aSpace = geometry.A_Ft + geometry.A_In / 12.0
             let bSpace = geometry.B_Ft + geometry.B_In / 12.0
             let minPanelSpace = List.min (geometry.Panels |> List.map (fun geom -> geom.LengthFt + geom.LengthIn / 12.0))
-            List.min [aSpace; bSpace; minPanelSpace]
-
-        let TL = float load
+            List.min [aSpace; bSpace; minPanelSpace] *)
 
         let liveLoadSpecialNote =
             match this.SpecialNoteList with
@@ -377,27 +379,29 @@ type Girder =
             | _ -> 0.0
 
         let DL = 1000.0 * (TL - LL)
-        let UDL = DL / minSpace
-        UDL, DL
-
-    member this.SDS sds liveLoadUNO liveLoadSpecialNotes=
-        let udl, _ = this.UDL_PDL liveLoadUNO liveLoadSpecialNotes
-        let SDS = udl * 0.14 * sds
-        Load.create("U", "SM", "TC", SDS,
-                      None, None, None, None, None, None, [3])
+        DL
 
     member this.PanelLocations =
         let geom = this.GirderGeometry
         [for i = 1 to geom.NumPanels do yield getPanelDim i geom]
 
+    member this.SdsLoads sds liveLoadUNO liveLoadSpecialNotes =
+        let dl = this.PDL liveLoadUNO liveLoadSpecialNotes
+        let geom = this.GirderGeometry
+        [for i = 1 to geom.NumPanels do
+            let distanceFt, distanceIn = getPanelDim i geom
+            yield
+                Load.create("C", "SM", "TC", dl * 0.14 * sds, Some distanceFt, Some distanceIn,
+                            None, None, None, None, [3])]
+
     member this.DeadLoads liveLoadUNO liveLoadSpecialNotes =
-        let _,dl = this.UDL_PDL liveLoadUNO liveLoadSpecialNotes
+        let dl = this.PDL liveLoadUNO liveLoadSpecialNotes
         let geom = this.GirderGeometry
         [for i = 1 to geom.NumPanels do
             let distanceFt, distanceIn = getPanelDim i geom
             yield
                 Load.create("C", "CL", "TC", dl, Some distanceFt, Some distanceIn,
-                             None, None, None, None, [3]) ]
+                             None, None, None, None, [3])]
         
 
 
@@ -444,15 +448,16 @@ type Girder =
        
         let size = this.GirderSize
         let sizeAsArray = size.Split( [|"G"; "BG"; "VG"; "N"; "K"|], StringSplitOptions.RemoveEmptyEntries)
-        let load = sizeAsArray.[2]
+        let TL = float sizeAsArray.[2]
+        let N = float sizeAsArray.[1]
+        (*
         let minSpace =
             let geometry = this.GirderGeometry
             let aSpace = geometry.A_Ft + geometry.A_In / 12.0
             let bSpace = geometry.B_Ft + geometry.B_In / 12.0
             let minPanelSpace = List.min (geometry.Panels |> List.map (fun geom -> geom.LengthFt + geom.LengthIn / 12.0))
-            List.min [aSpace; bSpace; minPanelSpace]
+            List.min [aSpace; bSpace; minPanelSpace] *)
 
-        let TL = float load
 
         let liveLoadSpecialNote =
             match this.SpecialNoteList with
@@ -475,7 +480,8 @@ type Girder =
                 | Regex @" *[LS] *= *(\d+\.?\d*) *% *" [percent] ->
                     let fraction = float percent/100.0
                     TL*fraction
-                | _ -> failwith (sprintf "Mark: %s No Inward Pressure Value Found!" this.Mark)
+                | _ -> failwith (sprintf "Mark %s: This mark has IP and/or seismic loading but is missing an LL%% note." this.Mark )
+
 
             else
                 0.0
@@ -501,7 +507,7 @@ type Girder =
                 | Regex @" *IP *= *(\d+\.?\d*) *% *" [percent] ->
                     let fraction = float percent/100.0
                     TL*fraction
-                | _ -> failwith (sprintf "Mark: %s No Inward Pressure Value Found!" this.Mark)
+                | _ -> failwith (sprintf "Mark %s: This mark has IP loading but is missing an IP%% note." this.Mark)
 
             else
                 0.0
@@ -528,7 +534,7 @@ type Girder =
             if requiresLc3Loads then
                 []
                 |> List.append sds_From_UDLs_And_UTLs
-                |> List.append [this.SDS sds liveLoadUNO liveLoadSpecialNotes]
+                |> List.append (this.SdsLoads sds liveLoadUNO liveLoadSpecialNotes)
                 |> List.append (this.DeadLoads liveLoadUNO liveLoadSpecialNotes)
                 |> List.append additionalJoistLoads
                 |> List.append directLoadsToLC3
@@ -639,7 +645,7 @@ module CleanBomInfo =
                             try
                                 getLoadFromArraySlice a2D.[currentIndex, *]
                             with
-                                | Failure(msg) -> printfn "Issue with load line %i; %s" currentIndex msg; failwith ""
+                                | Failure(msg) -> failwith (sprintf "Issue with load line %i; %s" currentIndex msg)
                                 
                         yield {LoadNumber = loadNumber; Load = getLoadFromArraySlice a2D.[currentIndex, *]}]
             loadNotes
@@ -797,30 +803,16 @@ let getAllInfo (reportPath:string) getInfoFunction modifyWorkbookFunctions =
         let tempReportPath = System.IO.Path.GetTempFileName()      
         File.Delete(tempReportPath)
         File.Copy(reportPath, tempReportPath)
-        let stopWatch = System.Diagnostics.Stopwatch.StartNew()
-        printfn "Opening Workbook"
         workbook <- workbooks.Open(tempReportPath)
-        stopWatch.Stop()
-        printfn "Workbook is opened (in %i seconds)" (stopWatch.Elapsed.Minutes * 60 + stopWatch.Elapsed.Seconds)
-        stopWatch.Restart()
-        printfn "Retrieving BOM information"
         let info = getInfoFunction workbook
-        stopWatch.Stop()
-        printfn "BOM information retrieved (in %i seconds)" stopWatch.Elapsed.Seconds
         tempExcelApp.EnableEvents <- false
         for modifyWorkbookFunction in modifyWorkbookFunctions do
-            stopWatch.Restart()
-            printfn "Applying Workbook Modification"
             modifyWorkbookFunction workbook info
-            stopWatch.Stop()
-            printfn "Workbook Modification complete (in %i seconds)" (stopWatch.Elapsed.Minutes * 60 + stopWatch.Elapsed.Seconds)
 
         tempExcelApp.EnableEvents <- true
         
         workbook |> saveWorkbook reportPath
 
-        printfn "Finished processing %s." reportPath 
-        printfn "Finished processing all files."
         info
     finally
         workbook.Close(false)
@@ -1260,7 +1252,6 @@ module Modifiers =
             let mutable loadPageCounter = 0
             for loadPage in loadPagesAsArray do
                 loadPageCounter <- loadPageCounter + 1
-                printfn "Writing to Seismic Load Page %i of %i" loadPageCounter numLoadPages
                 let newLoadSheet = addLoadSheet()
                 //newLoadSheet.Range("A14", "D55").Value2 <- loadPage.[*, Array2D.base2 loadPage..(Array2D.base2 loadPage) + 3]
                 //newLoadSheet.Range("F14", "M55").Value2 <- loadPage.[*, (Array2D.base2 loadPage) + 5..(Array2D.base2 loadPage) + 12]
