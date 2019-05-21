@@ -4,6 +4,8 @@ open System.IO
 #r @"NETStandard.Library.NETFRamework/build/net461/lib/netstandard.dll"
 #r @"DocumentFormat.OpenXml/lib/net46/DocumentFormat.OpenXml.dll"
 #r @"System.IO.Packaging/lib/net46/System.IO.Packaging.dll"
+#r @"MicrosoftOfficeCore\lib\net35\Office.dll"
+#r @"Microsoft.Office.Interop.Excel\lib\net20\Microsoft.Office.Interop.Excel.dll"
 #r @"EPPlus/lib/net40/EPPlus.dll"
 #r @"WindowsBase"
 #r @"../src/bin/Release/netstandard2.0/bom-tools.dll"

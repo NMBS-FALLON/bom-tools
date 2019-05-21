@@ -728,14 +728,20 @@ module CleanBomInfo =
             let mutable startRowIndex = Array2D.base1 a2D
             let colIndex = Array2D.base2 a2D
             let endIndex = (a2D |> Array2D.length1) - (if startRowIndex = 0 then 1 else 0)
+            let mutable mark = ""
             let additionalJoists : AdditionalJoist list =
                 [for currentIndex = startRowIndex to endIndex do
-                    if a2D.[currentIndex, colIndex] <> null && a2D.[currentIndex, colIndex] <> (box "") then
-                        yield
-                            {
-                            Mark = string a2D.[currentIndex, colIndex]
-                            AdditionalJoists = getAdditionalJoistsFromArraySlice a2D.[currentIndex, *]
-                            } ]
+                    mark <-
+                        if (isNull a2D.[currentIndex, colIndex] || (string a2D.[currentIndex, colIndex]) = "") then
+                            mark
+                        else
+                            (string a2D.[currentIndex, colIndex])                       
+                    yield
+                        {
+                        Mark = mark
+                        AdditionalJoists = getAdditionalJoistsFromArraySlice a2D.[currentIndex, *]
+                        } ]
+                |> List.filter (fun row -> row.Mark <> "" && not (Seq.isEmpty row.AdditionalJoists))
             additionalJoists
 
         let getGirders (sheet1 : obj [,], sheet2 : obj [,]) =
@@ -1271,12 +1277,3 @@ module Modifiers =
 
 let seperateSeismic bomPath seperatorInfo=
     getAllInfo bomPath getInfo [Modifiers.seperateSeismic seperatorInfo]
-
-
-
-
-
-
-
-
-
