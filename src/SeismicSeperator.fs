@@ -342,44 +342,54 @@ type Girder =
           (this.TcxrLengthFt + this.TcxlLengthIn/12.0)
 
     member this.PDL (liveLoadUNO : string) (liveLoadSpecialNotes : Note List)=
-        let size = this.GirderSize
-        let sizeAsArray = size.Split( [|"G"; "BG"; "VG"; "N"; "K"|], StringSplitOptions.RemoveEmptyEntries)
-        let TL = float sizeAsArray.[2]
+        let isInTotalOverLive = this.GirderSize.Contains("/")
 
-        let N = int sizeAsArray.[1]
+        if isInTotalOverLive then
+            let size = this.GirderSize
+            let sizeAsArray = size.Split( [|"G"; "BG"; "VG"; "/"; "N"; "K"|], StringSplitOptions.RemoveEmptyEntries)
+            let TL = float sizeAsArray.[2]
+            let LL = float sizeAsArray.[3]
+            let DL = System.Math.Round(1000.0 * (TL - LL))
+            DL
+        else
+            let size = this.GirderSize
+            let sizeAsArray = size.Split( [|"G"; "BG"; "VG"; "N"; "K"|], StringSplitOptions.RemoveEmptyEntries)
+            let TL = float sizeAsArray.[2]
 
-        (*
-        let minSpace =
-            let geometry = this.GirderGeometry
-            let aSpace = geometry.A_Ft + geometry.A_In / 12.0
-            let bSpace = geometry.B_Ft + geometry.B_In / 12.0
-            let minPanelSpace = List.min (geometry.Panels |> List.map (fun geom -> geom.LengthFt + geom.LengthIn / 12.0))
-            List.min [aSpace; bSpace; minPanelSpace] *)
+            let N = int sizeAsArray.[1]
 
-        let liveLoadSpecialNote =
-            match this.SpecialNoteList with
-            | Some list -> 
-                [for liveLoadSpecialNote in liveLoadSpecialNotes do
-                     if List.contains liveLoadSpecialNote.Number list then
-                         yield liveLoadSpecialNote.Text]
-            | None -> []
+            (*
+            let minSpace =
+                let geometry = this.GirderGeometry
+                let aSpace = geometry.A_Ft + geometry.A_In / 12.0
+                let bSpace = geometry.B_Ft + geometry.B_In / 12.0
+                let minPanelSpace = List.min (geometry.Panels |> List.map (fun geom -> geom.LengthFt + geom.LengthIn / 12.0))
+                List.min [aSpace; bSpace; minPanelSpace] *)
 
-        let liveLoad =
-            match liveLoadSpecialNote with
-            | [] -> liveLoadUNO
-            | _ -> liveLoadSpecialNote.[0] 
-                 
+            let liveLoadSpecialNote =
+                match this.SpecialNoteList with
+                | Some list -> 
+                    [for liveLoadSpecialNote in liveLoadSpecialNotes do
+                         if List.contains liveLoadSpecialNote.Number list then
+                             yield liveLoadSpecialNote.Text]
+                | None -> []
 
-        let LL =
-            match liveLoad with
-            | Regex @" *[LS] *= *(\d+\.?\d*) *[Kk] *" [value] -> float value
-            | Regex @" *[LS] *= *(\d+\.?\d*) *% *" [percent] ->
-                let fraction = float percent/100.0
-                TL*fraction
-            | _ -> 0.0
+            let liveLoad =
+                match liveLoadSpecialNote with
+                | [] -> liveLoadUNO
+                | _ -> liveLoadSpecialNote.[0] 
+                     
 
-        let DL = 1000.0 * (TL - LL)
-        DL
+            let LL =
+                match liveLoad with
+                | Regex @" *[LS] *= *(\d+\.?\d*) *[Kk] *" [value] -> float value
+                | Regex @" *[LS] *= *(\d+\.?\d*) *% *" [percent] ->
+                    let fraction = float percent/100.0
+                    TL*fraction
+                | _ -> 0.0
+
+            let DL = 1000.0 * (TL - LL)
+            DL
 
     member this.PanelLocations =
         let geom = this.GirderGeometry
@@ -448,7 +458,16 @@ type Girder =
        
         let size = this.GirderSize
         let sizeAsArray = size.Split( [|"G"; "BG"; "VG"; "N"; "K"|], StringSplitOptions.RemoveEmptyEntries)
-        let TL = float sizeAsArray.[2]
+        let isInTotalOverLive = this.GirderSize.Contains("/")
+        let TL = 
+            if isInTotalOverLive then
+                let size = this.GirderSize
+                let sizeAsArray = size.Split( [|"G"; "BG"; "VG"; "/"; "N"; "K"|], StringSplitOptions.RemoveEmptyEntries)
+                let TL = float sizeAsArray.[2]
+                TL
+            else
+                float sizeAsArray.[2]
+                
         let N = float sizeAsArray.[1]
         (*
         let minSpace =
@@ -474,15 +493,18 @@ type Girder =
                  
           
         let LL =
-            if (hasUniformInwardPressure && seperatorInfo.CheckInwardPressureOnGirders) || (seperatorInfo.SeperateSeismic && hasSeismic) then
+            if isInTotalOverLive then
+                let size = this.GirderSize
+                let sizeAsArray = size.Split( [|"G"; "BG"; "VG"; "/"; "N"; "K"|], StringSplitOptions.RemoveEmptyEntries)
+                let LL = float sizeAsArray.[3]
+                LL
+            else if (hasUniformInwardPressure && seperatorInfo.CheckInwardPressureOnGirders) || (seperatorInfo.SeperateSeismic && hasSeismic) then
                 match liveLoad with
                 | Regex @" *[LS] *= *(\d+\.?\d*) *[Kk] *" [value] -> float value
                 | Regex @" *[LS] *= *(\d+\.?\d*) *% *" [percent] ->
                     let fraction = float percent/100.0
                     TL*fraction
                 | _ -> failwith (sprintf "Mark %s: This mark has IP and/or seismic loading but is missing an LL%% note." this.Mark )
-
-
             else
                 0.0
 
@@ -1097,9 +1119,19 @@ module Modifiers =
                             //array.[i, colIndex + 2] <- box (removeLL_FromGirder mark (string array.[i, colIndex + 2]))
                             if (girderMarksWithLC3Loads |> List.contains mark) then
                                 array.[i, colIndex + 25] <- box (addLoadNote mark (string array.[i, colIndex + 25]))
+                            if (mark <> null && mark <> "" && array.[i, colIndex + 2].ToString().Contains("/") = false) then
+                                let girder = girders |> List.find (fun g -> g.Mark = mark)
+                                let size = girder.GirderSize
+                                let sizeAsArray = size.Split( [|"N";"K"|], StringSplitOptions.RemoveEmptyEntries)
+                                let totalLoad = float sizeAsArray.[1]
+                                let liveLoad = (System.Math.Ceiling((totalLoad * 1000.0 - (girder.PDL liveLoadUNO liveLoadSpecialNotes)) / 100.0) * 100.0) / 1000.0
+                                let newDesignation = sizeAsArray.[0] + "N" + sizeAsArray.[1] + "/" + (string liveLoad) + "K" + sizeAsArray.[2]
+                                array.[i, colIndex + 2] <- box newDesignation
                         if (sheet.Range("A26").Value2 :?> string) = "MARK" then
+                            sheet.Range("C28", "C45").Value2 <- array.[*, (colIndex + 2)..]
                             sheet.Range("Z28","Z45").Value2 <- array.[*,array.GetLength(1)..]              ///////////////////////////////////////////////////////////////////
                         else
+                            sheet.Range("C14", "C45").Value2 <- array.[*, (colIndex + 2)..]
                             sheet.Range("Z14", "Z45").Value2 <- array.[*,array.GetLength(1)..]          ////////////////////////////////////////////////////////////////////
 
 

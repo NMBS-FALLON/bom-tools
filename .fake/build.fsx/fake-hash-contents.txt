@@ -1,3 +1,4 @@
+
 #load ".fake/build.fsx/intellisense.fsx"
 open Fake.Core
 open Fake.DotNet
@@ -24,3 +25,6 @@ Target.create "All" ignore
   ==> "All"
 
 Target.runOrDefault "All"
+c:\Users\Darien\Code\bom-tools\build.fsx
+--define:DOTNETCORE
+--define:FAKE

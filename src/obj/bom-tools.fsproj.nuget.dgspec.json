@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\darien.shannon\\code\\bom-tools\\src\\bom-tools.fsproj": {}
+    "C:\\Users\\Darien\\code\\bom-tools\\src\\bom-tools.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\darien.shannon\\code\\bom-tools\\src\\bom-tools.fsproj": {
+    "C:\\Users\\Darien\\code\\bom-tools\\src\\bom-tools.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\darien.shannon\\code\\bom-tools\\src\\bom-tools.fsproj",
+        "projectUniqueName": "C:\\Users\\Darien\\code\\bom-tools\\src\\bom-tools.fsproj",
         "projectName": "bom-tools",
-        "projectPath": "C:\\Users\\darien.shannon\\code\\bom-tools\\src\\bom-tools.fsproj",
-        "packagesPath": "C:\\Users\\darien.shannon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\darien.shannon\\code\\bom-tools\\src\\obj\\",
+        "projectPath": "C:\\Users\\Darien\\code\\bom-tools\\src\\bom-tools.fsproj",
+        "packagesPath": "C:\\Users\\Darien\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Darien\\code\\bom-tools\\src\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\darien.shannon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Darien\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -46,404 +43,508 @@
           "dependencies": {
             "DocumentFormat.OpenXml": {
               "target": "Package",
-              "version": "[2.9.1, )"
+              "version": "[2.9.1, )",
+              "generatePathProperty": true
             },
             "EPPlus": {
               "target": "Package",
-              "version": "[4.5.3.1, )"
+              "version": "[4.5.3.1, )",
+              "generatePathProperty": true
             },
             "FSharp.Core": {
               "target": "Package",
-              "version": "[4.6.2, )"
+              "version": "[4.6.2, )",
+              "generatePathProperty": true
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.2.0, )",
+              "generatePathProperty": true
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.2.0, )",
+              "generatePathProperty": true
             },
             "Microsoft.Extensions.Configuration.FileExtensions": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.2.0, )",
+              "generatePathProperty": true
             },
             "Microsoft.Extensions.Configuration.Json": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.2.0, )",
+              "generatePathProperty": true
             },
             "Microsoft.Extensions.FileProviders.Abstractions": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.2.0, )",
+              "generatePathProperty": true
             },
             "Microsoft.Extensions.FileProviders.Physical": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.2.0, )",
+              "generatePathProperty": true
             },
             "Microsoft.Extensions.FileSystemGlobbing": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.2.0, )",
+              "generatePathProperty": true
             },
             "Microsoft.Extensions.Primitives": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.2.0, )",
+              "generatePathProperty": true
             },
             "Microsoft.NETCore.Platforms": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[2.2.0, )",
+              "generatePathProperty": true
             },
             "Microsoft.NETCore.Targets": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[2.1.0, )",
+              "generatePathProperty": true
             },
             "Microsoft.Office.Interop.Excel": {
               "target": "Package",
-              "version": "[15.0.4795.1000, )"
+              "version": "[15.0.4795.1000, )",
+              "generatePathProperty": true
             },
             "MicrosoftOfficeCore": {
               "target": "Package",
-              "version": "[15.0.0, )"
+              "version": "[15.0.0, )",
+              "generatePathProperty": true
             },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
-              "autoReferenced": true
+              "autoReferenced": true,
+              "generatePathProperty": true
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[12.0.1, )"
+              "version": "[12.0.1, )",
+              "generatePathProperty": true
             },
             "System.Buffers": {
               "target": "Package",
-              "version": "[4.5.0, )"
+              "version": "[4.5.0, )",
+              "generatePathProperty": true
             },
             "System.Collections": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Collections.Concurrent": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Collections.NonGeneric": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Collections.Specialized": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.ComponentModel": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.ComponentModel.Primitives": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.ComponentModel.TypeConverter": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Data.Common": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Diagnostics.Debug": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Diagnostics.Tools": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Drawing.Common": {
               "target": "Package",
-              "version": "[4.5.1, )"
+              "version": "[4.5.1, )",
+              "generatePathProperty": true
             },
             "System.Globalization": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Globalization.Calendars": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Globalization.Extensions": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.IO": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.IO.FileSystem": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.IO.FileSystem.Primitives": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.IO.Packaging": {
               "target": "Package",
-              "version": "[4.5.0, )"
+              "version": "[4.5.0, )",
+              "generatePathProperty": true
             },
             "System.Linq": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Memory": {
               "target": "Package",
-              "version": "[4.5.2, )"
+              "version": "[4.5.2, )",
+              "generatePathProperty": true
             },
             "System.Numerics.Vectors": {
               "target": "Package",
-              "version": "[4.5.0, )"
+              "version": "[4.5.0, )",
+              "generatePathProperty": true
             },
             "System.Private.DataContractSerialization": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Reflection": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Reflection.Emit": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Reflection.Emit.ILGeneration": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Reflection.Emit.Lightweight": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Reflection.Extensions": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Reflection.Primitives": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Reflection.TypeExtensions": {
               "target": "Package",
-              "version": "[4.5.1, )"
+              "version": "[4.5.1, )",
+              "generatePathProperty": true
             },
             "System.Resources.ResourceManager": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Runtime": {
               "target": "Package",
-              "version": "[4.3.1, )"
+              "version": "[4.3.1, )",
+              "generatePathProperty": true
             },
             "System.Runtime.CompilerServices.Unsafe": {
               "target": "Package",
-              "version": "[4.5.2, )"
+              "version": "[4.5.2, )",
+              "generatePathProperty": true
             },
             "System.Runtime.Extensions": {
               "target": "Package",
-              "version": "[4.3.1, )"
+              "version": "[4.3.1, )",
+              "generatePathProperty": true
             },
             "System.Runtime.Handles": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Runtime.InteropServices": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Runtime.Numerics": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Runtime.Serialization.Primitives": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Runtime.Serialization.Xml": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Security.Claims": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Security.Cryptography.Algorithms": {
               "target": "Package",
-              "version": "[4.3.1, )"
+              "version": "[4.3.1, )",
+              "generatePathProperty": true
             },
             "System.Security.Cryptography.Cng": {
               "target": "Package",
-              "version": "[4.5.0, )"
+              "version": "[4.5.0, )",
+              "generatePathProperty": true
             },
             "System.Security.Cryptography.Csp": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Security.Cryptography.Encoding": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.5.1, )"
+              "version": "[4.5.1, )",
+              "generatePathProperty": true
             },
             "System.Security.Cryptography.Pkcs": {
               "target": "Package",
-              "version": "[4.5.2, )"
+              "version": "[4.5.2, )",
+              "generatePathProperty": true
             },
             "System.Security.Cryptography.Primitives": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Security.Cryptography.X509Certificates": {
               "target": "Package",
-              "version": "[4.3.2, )"
+              "version": "[4.3.2, )",
+              "generatePathProperty": true
             },
             "System.Security.Principal": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Text.Encoding": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Text.Encoding.CodePages": {
               "target": "Package",
-              "version": "[4.5.1, )"
+              "version": "[4.5.1, )",
+              "generatePathProperty": true
             },
             "System.Text.Encoding.Extensions": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Text.RegularExpressions": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Threading": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Threading.Tasks": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Xml.ReaderWriter": {
               "target": "Package",
-              "version": "[4.3.1, )"
+              "version": "[4.3.1, )",
+              "generatePathProperty": true
             },
             "System.Xml.XDocument": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Xml.XPath": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Xml.XPath.XmlDocument": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Xml.XmlDocument": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "System.Xml.XmlSerializer": {
               "target": "Package",
-              "version": "[4.3.0, )"
+              "version": "[4.3.0, )",
+              "generatePathProperty": true
             },
             "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.debian.9-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.fedora.23-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.fedora.24-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.fedora.27-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.fedora.28-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.native.System": {
               "target": "Package",
-              "version": "[4.3.1, )"
+              "version": "[4.3.1, )",
+              "generatePathProperty": true
             },
             "runtime.native.System.Net.Http": {
               "target": "Package",
-              "version": "[4.3.1, )"
+              "version": "[4.3.1, )",
+              "generatePathProperty": true
             },
             "runtime.native.System.Security.Cryptography.Apple": {
               "target": "Package",
-              "version": "[4.3.1, )"
+              "version": "[4.3.1, )",
+              "generatePathProperty": true
             },
             "runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.opensuse.13.2-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.opensuse.42.1-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.opensuse.42.3-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.Apple": {
               "target": "Package",
-              "version": "[4.3.1, )"
+              "version": "[4.3.1, )",
+              "generatePathProperty": true
             },
             "runtime.osx.10.10-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.rhel.7-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             },
             "runtime.ubuntu.18.04-x64.runtime.native.System.Security.Cryptography.OpenSsl": {
               "target": "Package",
-              "version": "[4.3.3, )"
+              "version": "[4.3.3, )",
+              "generatePathProperty": true
             }
           },
           "imports": [
-            "net461"
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
           ],
           "assetTargetFallback": true,
-          "warn": true
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400-preview-015151\\RuntimeIdentifierGraph.json"
         }
       }
     }

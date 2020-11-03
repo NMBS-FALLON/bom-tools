@@ -7,8 +7,9 @@ open System.IO
 #r @"MicrosoftOfficeCore\lib\net35\Office.dll"
 #r @"Microsoft.Office.Interop.Excel\lib\net20\Microsoft.Office.Interop.Excel.dll"
 #r @"EPPlus/lib/net40/EPPlus.dll"
-#r @"WindowsBase"
 #r @"../src/bin/Release/netstandard2.0/bom-tools.dll"
+#r "nuget: System.IO.Packaging"
+#r "nuget: WindowsBase"
 
 
 open DESign.BomTools
@@ -33,7 +34,6 @@ let jobWithLc3Loads () =
     let job = GetJob bom
     let newJob = GetSeperatedSeismicLoads job
     newJob.Loads
-    |> Seq.filter (fun load -> load.ID = "G42")
     |> Seq.toList
 
 jobWithLc3Loads()
