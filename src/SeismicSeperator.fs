@@ -269,38 +269,95 @@ type Joist =
         
         lc3Loads
 
+type AdditionalLoadType =
+    | SingleLoad of float
+    | TotalOverLiveLoad of float * float
 
 type _AdditionalJoist =
     {
     LocationFt : obj
     LocationIn : obj
-    Load : float
+    Load : AdditionalLoadType
     }
 
-    member this.ToLoad() =            
-        {
-        Type = "C"
-        Category = "CL"
-        Position = "TC"
-        Load1Value = this.Load * 1000.0
-        Load1DistanceFt =
-            match this.LocationFt with
-            | v when box "P" = v -> -1.0 |> Some
-            | _ -> parseObjToFloatOptionWithFailure this.LocationFt
-        Load1DistanceIn =
-            match this.LocationIn with
-            | :? string as v ->
-                if v.Contains("#") then
-                    v.Replace("#", "") |> double |> Some
-                else
-                    parseObjToFloatOptionWithFailure this.LocationIn
-            | _ -> parseObjToFloatOptionWithFailure this.LocationIn
-        Load2Value = None
-        Load2DistanceFt = None
-        Load2DistanceIn = None
-        Ref = None
-        LoadCases = []
-        }
+    member this.ToLoads() =
+        match this.Load with
+        | SingleLoad load ->
+            [{
+            Type = "C"
+            Category = "CL"
+            Position = "TC"
+            Load1Value = load * 1000.0
+            Load1DistanceFt =
+                match this.LocationFt with
+                | v when box "P" = v -> -1.0 |> Some
+                | _ -> parseObjToFloatOptionWithFailure this.LocationFt
+            Load1DistanceIn =
+                match this.LocationIn with
+                | :? string as v ->
+                    if v.Contains("#") then
+                        v.Replace("#", "") |> double |> Some
+                    else
+                        parseObjToFloatOptionWithFailure this.LocationIn
+                | _ -> parseObjToFloatOptionWithFailure this.LocationIn
+            Load2Value = None
+            Load2DistanceFt = None
+            Load2DistanceIn = None
+            Ref = None
+            LoadCases = []
+            }]
+        | TotalOverLiveLoad (totalLoad, liveLoad) ->
+            let deadLoad = System.Math.Round((totalLoad - liveLoad) * 1000.0)
+            let liveLoad = System.Math.Round(liveLoad * 1000.0)
+            [
+                {
+                    Type = "C"
+                    Category = "CL"
+                    Position = "TC"
+                    Load1Value = deadLoad
+                    Load1DistanceFt =
+                        match this.LocationFt with
+                        | v when box "P" = v -> -1.0 |> Some
+                        | _ -> parseObjToFloatOptionWithFailure this.LocationFt
+                    Load1DistanceIn =
+                        match this.LocationIn with
+                        | :? string as v ->
+                            if v.Contains("#") then
+                                v.Replace("#", "") |> double |> Some
+                            else
+                                parseObjToFloatOptionWithFailure this.LocationIn
+                        | _ -> parseObjToFloatOptionWithFailure this.LocationIn
+                    Load2Value = None
+                    Load2DistanceFt = None
+                    Load2DistanceIn = None
+                    Ref = None
+                    LoadCases = []
+                };
+                {
+                    Type = "C"
+                    Category = "LL"
+                    Position = "TC"
+                    Load1Value = liveLoad
+                    Load1DistanceFt =
+                        match this.LocationFt with
+                        | v when box "P" = v -> -1.0 |> Some
+                        | _ -> parseObjToFloatOptionWithFailure this.LocationFt
+                    Load1DistanceIn =
+                        match this.LocationIn with
+                        | :? string as v ->
+                            if v.Contains("#") then
+                                v.Replace("#", "") |> double |> Some
+                            else
+                                parseObjToFloatOptionWithFailure this.LocationIn
+                        | _ -> parseObjToFloatOptionWithFailure this.LocationIn
+                    Load2Value = None
+                    Load2DistanceFt = None
+                    Load2DistanceIn = None
+                    Ref = None
+                    LoadCases = []
+                }
+            ]
+
 
 
 type AdditionalJoist =
@@ -738,13 +795,23 @@ module CleanBomInfo =
                 if (a.[col + 2] <> null && a.[col + 2] <> (box "")) then
                     if (a.[col] <> null && a.[col] <> (box "")) || (a.[col + 1] <> null && a.[col + 1] <> (box "")) then
                         let additionalJoist =
+                            let loadString = string (a.[col + 2])
+                            let load =
+                                if loadString.Contains("/") then
+                                    let loadStringArray = loadString.Split([|'/'|], StringSplitOptions.RemoveEmptyEntries)
+                                    let totalLoad = float loadStringArray.[0]
+                                    let liveLoad = float loadStringArray.[1]
+                                    TotalOverLiveLoad(totalLoad, liveLoad)
+                                else
+                                    SingleLoad(System.Convert.ToDouble(loadString))
+
                             {
                             LocationFt = string a.[col]
                             LocationIn = string a.[col + 1]
-                            Load = Convert.ToDouble(a.[col + 2])
+                            Load = load
                             }
-                        yield additionalJoist.ToLoad()
-                col <- col + 4]
+                        yield additionalJoist.ToLoads()
+                col <- col + 4] |> List.concat
 
         let getAdditionalJoistsFromArray (a2D : obj [,]) =
             let mutable startRowIndex = Array2D.base1 a2D
