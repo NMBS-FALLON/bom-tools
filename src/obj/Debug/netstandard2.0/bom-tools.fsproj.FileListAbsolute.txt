@@ -22,3 +22,11 @@ C:\Users\Darien\Code\bom-tools\src\obj\Debug\netstandard2.0\bom-tools.AssemblyIn
 C:\Users\Darien\Code\bom-tools\src\obj\Debug\netstandard2.0\bom-tools.AssemblyInfo.fs
 C:\Users\Darien\Code\bom-tools\src\obj\Debug\netstandard2.0\bom-tools.dll
 C:\Users\Darien\Code\bom-tools\src\obj\Debug\netstandard2.0\bom-tools.pdb
+C:\Users\Darien.shannon\documents\code\bom-tools\src\bin\Debug\netstandard2.0\bom-tools.deps.json
+C:\Users\Darien.shannon\documents\code\bom-tools\src\bin\Debug\netstandard2.0\bom-tools.dll
+C:\Users\Darien.shannon\documents\code\bom-tools\src\bin\Debug\netstandard2.0\bom-tools.pdb
+C:\Users\Darien.shannon\documents\code\bom-tools\src\obj\Debug\netstandard2.0\bom-tools.fsprojAssemblyReference.cache
+C:\Users\Darien.shannon\documents\code\bom-tools\src\obj\Debug\netstandard2.0\bom-tools.AssemblyInfoInputs.cache
+C:\Users\Darien.shannon\documents\code\bom-tools\src\obj\Debug\netstandard2.0\bom-tools.AssemblyInfo.fs
+C:\Users\Darien.shannon\documents\code\bom-tools\src\obj\Debug\netstandard2.0\bom-tools.dll
+C:\Users\Darien.shannon\documents\code\bom-tools\src\obj\Debug\netstandard2.0\bom-tools.pdb

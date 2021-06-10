@@ -468,7 +468,7 @@ type Girder =
             let distanceFt, distanceIn = getPanelDim i geom
             yield
                 Load.create("C", "CL", "TC", dl, Some distanceFt, Some distanceIn,
-                             None, None, None, None, [3])]
+                             None, None, None, Some "L-OAL", [3])]
         
 
 
