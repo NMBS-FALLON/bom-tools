@@ -5,19 +5,23 @@
     <RootNamespace>bom_tools</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Helpers.fs" />
-    <Compile Include="ArrayExtensions.fs" />
-    <Compile Include="SpreadSheetML.Helpers.fs" />
-    <Compile Include="DTO.fs" />
-    <Compile Include="Domain\Note.fs" />
-    <Compile Include="Domain\Load.fs" />
-    <Compile Include="Domain\Joist.fs" />
-    <Compile Include="Domain\Girder.fs" />
-    <Compile Include="Domain\Job.fs" />
-    <Compile Include="Import.fs" />
-    <Compile Include="NotesToExcel.fs" />
-    <Compile Include="AdjustLoads.fs" />
-    <Compile Include="SeismicSeperator.fs" />
+    <Compile Include="Helpers\Helpers.fs" />
+    <Compile Include="Helpers\ArrayExtensions.fs" />
+    <Compile Include="Helpers\SpreadSheetML.Helpers.fs" />
+    <Compile Include="NMBS\DTO.fs" />
+    <Compile Include="NMBS\Domain\Note.fs" />
+    <Compile Include="NMBS\Domain\Load.fs" />
+    <Compile Include="NMBS\Domain\Joist.fs" />
+    <Compile Include="NMBS\Domain\Girder.fs" />
+    <Compile Include="NMBS\Domain\Job.fs" />
+    <Compile Include="NMBS\Import.fs" />
+    <Compile Include="NMBS\NotesToExcel.fs" />
+    <Compile Include="NMBS\LoadNotesToExcel.fs" />
+    <Compile Include="NMBS\AdjustLoads.fs" />
+    <Compile Include="NMBS\SeismicSeperator.fs" />
+    <Compile Include="Nucor\ImportDTOs.fs" />
+    <Compile Include="Nucor\Import.fs" />
+    <Compile Include="Sei\SeiImport.fs" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
 </Project>
