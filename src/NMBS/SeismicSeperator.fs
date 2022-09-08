@@ -8,6 +8,10 @@ open DESign.ArrayExtensions
 open System.Text.RegularExpressions
 open DESign.Helpers
 
+
+let inline handleErrorWithStringMessage msg exp =
+    try exp with | _ -> (failwith msg)
+
 type SeperatorInfo =
     {
         SeperateSeismic : bool
@@ -108,29 +112,29 @@ let getGirderGeometry (a2D : obj[,]) =
         let panels =
             [for j = 1 to numPanels do
                 let mark = string (a2D.[row- numPanels + 1, startColIndex])
-                let n = Convert.ToInt32 (a2D.[row- numPanels + j, startColIndex + 4])
-                let feet = Convert.ToDouble (a2D.[row- numPanels + j, startColIndex + 5])
-                let inch = Convert.ToDouble (a2D.[row- numPanels + j, startColIndex + 6])
-                for k = 1 to Convert.ToInt32 (a2D.[row- numPanels + j, startColIndex + 4]) do
+                let n = Convert.ToInt32 (a2D.[row- numPanels + j, startColIndex + 4]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
+                let feet = Convert.ToDouble (a2D.[row- numPanels + j, startColIndex + 5]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
+                let inch = Convert.ToDouble (a2D.[row- numPanels + j, startColIndex + 6]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
+                for k = 1 to Convert.ToInt32 (a2D.[row- numPanels + j, startColIndex + 4]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark) do
                     yield
                         {
                         Number = 1
-                        LengthFt = Convert.ToDouble (a2D.[row- numPanels + j, startColIndex + 5])
-                        LengthIn = Convert.ToDouble (a2D.[row- numPanels + j, startColIndex + 6])
+                        LengthFt = Convert.ToDouble (a2D.[row- numPanels + j, startColIndex + 5]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
+                        LengthIn = Convert.ToDouble (a2D.[row- numPanels + j, startColIndex + 6]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
                         }]
         if numPanels <> 0 then
             let mark = string (a2D.[row- numPanels + 1, startColIndex])
-            let aFt = Convert.ToDouble (a2D.[row- numPanels + 1, startColIndex + 2])
-            let aIn = Convert.ToDouble (a2D.[row- numPanels + 1, startColIndex + 3])
-            let bFt = Convert.ToDouble (a2D.[row, startColIndex + 7])
-            let bIn = Convert.ToDouble (a2D.[row, startColIndex + 8])
+            let aFt = Convert.ToDouble (a2D.[row- numPanels + 1, startColIndex + 2]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
+            let aIn = Convert.ToDouble (a2D.[row- numPanels + 1, startColIndex + 3]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
+            let bFt = Convert.ToDouble (a2D.[row, startColIndex + 7]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
+            let bIn = Convert.ToDouble (a2D.[row, startColIndex + 8]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
             yield
                  {
                  Mark = string (a2D.[row- numPanels + 1, startColIndex])
-                 A_Ft = Convert.ToDouble (a2D.[row- numPanels + 1, startColIndex + 2])
-                 A_In = Convert.ToDouble (a2D.[row- numPanels + 1, startColIndex + 3])
-                 B_Ft = Convert.ToDouble (a2D.[row, startColIndex + 7])
-                 B_In = Convert.ToDouble (a2D.[row, startColIndex + 8])
+                 A_Ft = Convert.ToDouble (a2D.[row- numPanels + 1, startColIndex + 2]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
+                 A_In = Convert.ToDouble (a2D.[row- numPanels + 1, startColIndex + 3]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
+                 B_Ft = Convert.ToDouble (a2D.[row, startColIndex + 7]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
+                 B_In = Convert.ToDouble (a2D.[row, startColIndex + 8]) |> handleErrorWithStringMessage ( sprintf "Error with panels at mark %s" mark)
                  Panels = panels
                  }
         row <- row+ 1] 
@@ -284,7 +288,7 @@ type _AdditionalJoist =
         match this.Load with
         | SingleLoad load ->
             [{
-            Type = "C"
+            Type = "CB"
             Category = "CL"
             Position = "TC"
             Load1Value = load * 1000.0
@@ -303,7 +307,7 @@ type _AdditionalJoist =
             Load2Value = None
             Load2DistanceFt = None
             Load2DistanceIn = None
-            Ref = Some "L-OAL"
+            Ref = Some "L-BL"
             LoadCases = []
             }]
         | TotalOverLiveLoad (totalLoad, liveLoad) ->
@@ -330,7 +334,7 @@ type _AdditionalJoist =
                     Load2Value = None
                     Load2DistanceFt = None
                     Load2DistanceIn = None
-                    Ref = Some "L-OAL"
+                    Ref = Some "L-BL"
                     LoadCases = []
                 };
                 {
@@ -353,7 +357,7 @@ type _AdditionalJoist =
                     Load2Value = None
                     Load2DistanceFt = None
                     Load2DistanceIn = None
-                    Ref = Some "L-OAL"
+                    Ref = Some "L-BL"
                     LoadCases = []
                 }
             ]
@@ -459,7 +463,7 @@ type Girder =
             let distanceFt, distanceIn = getPanelDim i geom
             yield
                 Load.create("C", "SM", "TC", dl * 0.14 * sds, Some distanceFt, Some distanceIn,
-                            None, None, None, None, [3])]
+                            None, None, None, Some "L-BL", [3])]
 
     member this.DeadLoads liveLoadUNO liveLoadSpecialNotes =
         let dl = this.PDL liveLoadUNO liveLoadSpecialNotes
@@ -468,7 +472,7 @@ type Girder =
             let distanceFt, distanceIn = getPanelDim i geom
             yield
                 Load.create("C", "CL", "TC", dl, Some distanceFt, Some distanceIn,
-                             None, None, None, Some null, [3])]
+                             None, None, None, Some "L-BL", [3])]
         
 
 
@@ -602,7 +606,7 @@ type Girder =
 
         let liveLoads =
             [ for panelFt, panelIn in this.PanelLocations do
-                yield Load.create("C", "LL", "TC", LL * 1000.0, (Some panelFt), (Some panelIn), None, None, None, None, [4])]
+                yield Load.create("C", "LL", "TC", LL * 1000.0, (Some panelFt), (Some panelIn), None, None, None, Some "L-BL", [4])]
 
         
         
@@ -691,7 +695,7 @@ module CleanBomInfo =
             let loadNotes = loadCaseString.Split([|","|], StringSplitOptions.RemoveEmptyEntries)
             let loadNotes = loadNotes
                             |> List.ofArray
-                            |> List.map (fun string -> System.Int32.Parse(string))
+                            |> List.map (fun string -> System.Int32.Parse(string.Trim()))
             loadNotes
 
 
@@ -828,7 +832,7 @@ module CleanBomInfo =
                     yield
                         {
                         Mark = mark
-                        AdditionalJoists = getAdditionalJoistsFromArraySlice a2D.[currentIndex, *]
+                        AdditionalJoists = getAdditionalJoistsFromArraySlice a2D.[currentIndex, *] |> handleErrorWithStringMessage ( sprintf "Error with additional joist information at mark %s" mark)
                         } ]
                 |> List.filter (fun row -> row.Mark <> "" && not (Seq.isEmpty row.AdditionalJoists))
             additionalJoists
@@ -1085,8 +1089,10 @@ module Modifiers =
             let startCol = Array2D.base2 a2D
             for currentIndex = startRow to endRow do
                 let lc = (string a2D.[currentIndex, startCol + 12]).Trim()
-                if a2D.[currentIndex, startCol + 2] = (box "SM") && (lc = "1" || lc = "") then
+                if a2D.[currentIndex, startCol + 2] = (box "SM") && lc = "" then
                     a2D.[currentIndex, startCol + 12] <- box "3"
+                if a2D.[currentIndex, startCol + 2] = (box "SM") && (lc.Contains("1")) then
+                    a2D.[currentIndex, startCol + 12] <- box (lc.Replace("1", "3"))
 
     
 

@@ -21,6 +21,7 @@
     <Compile Include="NMBS\SeismicSeperator.fs" />
     <Compile Include="Nucor\ImportDTOs.fs" />
     <Compile Include="Nucor\Import.fs" />
+    <Compile Include="Nucor\NmbsBom.fs" />
     <Compile Include="Sei\SeiImport.fs" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />
