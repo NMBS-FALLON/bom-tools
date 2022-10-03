@@ -352,7 +352,7 @@ let GetGirders(bom : Bom) =
 
                 let newLines =
                     let mutable panelLocation = firstPanel
-                    [ for i in 0..(numPanels - 1) do
+                    [ for i in 0..(numPanels) do
                           panelLocation <- panelLocation + panelSpacing
                           yield panelLocation ]
                 getPanelLocations (firstPanel :: (panelLocations |> List.append newLines)) tail

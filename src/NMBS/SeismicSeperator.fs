@@ -884,10 +884,40 @@ module CleanBomInfo =
                 yield {girder with AdditionalJoists = additionalJoists}]
 
                 
-let saveWorkbook (title : string) (workbook : Workbook) =
-        let title = title.ToUpper().Replace(".XLSM", " (IMPORT).XLSM")
-        let title = title.ToUpper().Replace(".XLSX", " (IMPORT).XLSX")
+let saveWorkbook (title : string) (suffix : string) (workbook : Workbook) =
+        let title = title.ToUpper().Replace(".XLSM", sprintf " (%s).XLSM" suffix)
+        let title = title.ToUpper().Replace(".XLSX", sprintf " (%s).XLSM" suffix)
         workbook.SaveAs(title)
+
+let removeProtection (reportPath: string) =
+    let tempExcelApp = new Microsoft.Office.Interop.Excel.ApplicationClass(Visible = true)
+    tempExcelApp.DisplayAlerts = false |> ignore
+    tempExcelApp.AutomationSecurity = Microsoft.Office.Core.MsoAutomationSecurity.msoAutomationSecurityForceDisable |> ignore
+    let workbooks = tempExcelApp.Workbooks
+    let mutable workbook = workbooks.Add()
+
+    //let bom = tempExcelApp.Workbooks.Open(bomPath)
+    try 
+        tempExcelApp.DisplayAlerts <- false
+        let tempReportPath = System.IO.Path.GetTempFileName()      
+        File.Delete(tempReportPath)
+        File.Copy(reportPath, tempReportPath)
+        workbook <- workbooks.Open(tempReportPath)
+        tempExcelApp.EnableEvents <- false
+
+        tempExcelApp.EnableEvents <- true
+    
+        workbook |> saveWorkbook reportPath "NO PROTECTION"
+
+    finally
+        workbook.Close(false)
+        Marshal.ReleaseComObject(workbook) |> ignore
+        System.GC.Collect() |> ignore
+        workbooks.Close()
+        Marshal.ReleaseComObject(workbooks) |> ignore
+        tempExcelApp.Quit()
+        Marshal.ReleaseComObject(tempExcelApp) |> ignore
+        System.GC.Collect() |> ignore    
 
 let getAllInfo (reportPath:string) getInfoFunction modifyWorkbookFunctions =
     let tempExcelApp = new Microsoft.Office.Interop.Excel.ApplicationClass(Visible = true)
@@ -910,7 +940,7 @@ let getAllInfo (reportPath:string) getInfoFunction modifyWorkbookFunctions =
 
         tempExcelApp.EnableEvents <- true
         
-        workbook |> saveWorkbook reportPath
+        workbook |> saveWorkbook reportPath "IMPORT"
 
         info
     finally

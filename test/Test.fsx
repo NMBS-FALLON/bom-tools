@@ -22,8 +22,8 @@ open DESign.BomTools.AdjustLoads
 open DESign.BomTools.LoadNotesToExcel
 
 
-let bomFileName = @"C:\Users\darien.shannon\documents\code\bom-tools\testBOMs\0120-0297 AutoCalc BOMs.xlsm"
-let bomOutPutPath = @"C:\Users\darien.shannon\documents\code\bom-tools\testBOMs\BOM Notes.xlsx"
+let bomFileName = @"G:\JDS Projects\0121-0230\5.0 - DESIGN\Design Changes & Remarks\BLDG A\0121-0230 - PARK 303 PH.II & PH.III (W)(BLDG A) - (REV 09 21 2022)AutoCalc BOMs.xlsm"
+let bomOutPutPath = @"G:\JDS Projects\0121-0230\5.0 - DESIGN\Design Changes & Remarks\BLDG A\0121-0230 - PARK 303 PH.II & PH.III (W)(BLDG A) - (REV 09 21 2022)AutoCalc BOMs_Load Notes.xlsx"
 let bomLoadOutPutPath = @"C:\Users\darien.shannon\documents\code\bom-tools\testBOMs\BOM Load Notes 2.xlsx"
 let vulcraftBomWithJoists = @"C:\Users\Darien.shannon\Documents\Code\bom-tools\testBOMs\Vulcraft\4048 BOM (Lists 7-12).xlsm"
 
@@ -41,8 +41,12 @@ let getVulcraftJoists =
 let getBomInfo () =
     use bom = GetBom bomFileName
     let job = GetJob bom
-    use package = CreateBomInfoSheetFromJob job
+    use package = CreateInfoSheet job
     using (new FileStream(bomOutPutPath, FileMode.Create)) (fun fs -> package.SaveAs(fs))
+
+let test () =
+    use bom = GetBom bomFileName
+    let job = GetGirders
 
 let jobWithLc3Loads () =
     use bom = GetBom bomFileName
@@ -55,7 +59,7 @@ let getJoistLoadNotes () =
     use bom = GetBom bomFileName
     let job = GetJob bom
     use package = DESign.BomTools.LoadNotesToExcel.CreateBomInfoSheetFromJob job
-    using (new FileStream(bomLoadOutPutPath, FileMode.Create)) (fun fs -> package.SaveAs(fs))
+    using (new FileStream(bomOutPutPath, FileMode.Create)) (fun fs -> package.SaveAs(fs))
 
 let getJoistLoadNotes2 () =
     use bom = GetBom bomFileName

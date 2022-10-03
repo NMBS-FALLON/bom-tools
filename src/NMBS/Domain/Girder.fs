@@ -319,7 +319,7 @@ module Girder =
                 else
                     Error "Girder Geometry is not in a proper format; check girder geometry"
 
-        
+        (*
 
         let additionalJoists =
 
@@ -364,7 +364,9 @@ module Girder =
                                 | Some loc -> loc
                                 | None ->
                                     failwith
-                                        "Mark %s has an 'additional load' that is located at a non-existant panel point"
+                                        (sprintf 
+                                            "Mark %s has an 'additional load' that is located at a non-existant panel point"
+                                            mark)
 
                             let loadValue =
                                 match a.LoadValue with
@@ -416,7 +418,7 @@ module Girder =
                             { Location = locationFt + locationIn
                               Load = loadValue }) |> Ok
             | Error msg -> Error msg
-
+            *)
         let girder =
             { Mark = mark
               Quantity = quantity
@@ -439,6 +441,6 @@ module Girder =
               LoadNotes = loadNotes
               NumKbRequired = numKbRequired
               PanelLocations = panelLocations
-              AdditionalJoists = additionalJoists }
+              AdditionalJoists = Ok Seq.empty (*additionalJoists*) }
 
         girder
