@@ -17,12 +17,11 @@ open DESign.BomTools.Import
 open DESign.BomTools.Domain
 open DESign.BomTools.Dto
 open DESign.SpreadSheetML.Helpers
-open DESign.BomTools.NotesToExcel
+open DESign.BomTools.CreateInfoWorkbook
 open DESign.BomTools.AdjustLoads
-open DESign.BomTools.LoadNotesToExcel
 
 
-let bomFileName = @"G:\JDS Projects\0121-0230\5.0 - DESIGN\Design Changes & Remarks\BLDG A\0121-0230 - PARK 303 PH.II & PH.III (W)(BLDG A) - (REV 09 21 2022)AutoCalc BOMs.xlsm"
+let bomFileName = @"C:\Users\Darien.shannon\Documents\Code\bom-tools\testBOMs\NN22-0071 Joist BOMs.xlsm"
 let bomOutPutPath = @"G:\JDS Projects\0121-0230\5.0 - DESIGN\Design Changes & Remarks\BLDG A\0121-0230 - PARK 303 PH.II & PH.III (W)(BLDG A) - (REV 09 21 2022)AutoCalc BOMs_Load Notes.xlsx"
 let bomLoadOutPutPath = @"C:\Users\darien.shannon\documents\code\bom-tools\testBOMs\BOM Load Notes 2.xlsx"
 let vulcraftBomWithJoists = @"C:\Users\Darien.shannon\Documents\Code\bom-tools\testBOMs\Vulcraft\4048 BOM (Lists 7-12).xlsm"
@@ -38,11 +37,14 @@ let getVulcraftJoists =
 
 
 
-let getBomInfo () =
+let getBomInfo bomFileName =
     use bom = GetBom bomFileName
     let job = GetJob bom
-    use package = CreateInfoSheet job
-    using (new FileStream(bomOutPutPath, FileMode.Create)) (fun fs -> package.SaveAs(fs))
+    job
+
+let test = getBomInfo bomFileName
+let girders = test.Joists |> Seq.toList |> List.map (fun j -> j.LoadNotes |> Seq.toList)
+
 
 let test () =
     use bom = GetBom bomFileName

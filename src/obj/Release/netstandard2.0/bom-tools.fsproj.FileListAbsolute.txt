@@ -25,8 +25,9 @@ C:\Users\Darien\code\bom-tools\src\obj\Release\netstandard2.0\bom-tools.pdb
 C:\Users\Darien.shannon\documents\code\bom-tools\src\bin\Release\netstandard2.0\bom-tools.deps.json
 C:\Users\Darien.shannon\documents\code\bom-tools\src\bin\Release\netstandard2.0\bom-tools.dll
 C:\Users\Darien.shannon\documents\code\bom-tools\src\bin\Release\netstandard2.0\bom-tools.pdb
-C:\Users\Darien.shannon\documents\code\bom-tools\src\obj\Release\netstandard2.0\bom-tools.fsprojAssemblyReference.cache
 C:\Users\Darien.shannon\documents\code\bom-tools\src\obj\Release\netstandard2.0\bom-tools.AssemblyInfoInputs.cache
 C:\Users\Darien.shannon\documents\code\bom-tools\src\obj\Release\netstandard2.0\bom-tools.AssemblyInfo.fs
 C:\Users\Darien.shannon\documents\code\bom-tools\src\obj\Release\netstandard2.0\bom-tools.dll
 C:\Users\Darien.shannon\documents\code\bom-tools\src\obj\Release\netstandard2.0\bom-tools.pdb
+C:\Users\Darien.shannon\documents\code\bom-tools\src\obj\Release\netstandard2.0\bom-tools.fsproj.AssemblyReference.cache
+C:\Users\Darien.shannon\documents\code\bom-tools\src\obj\Release\netstandard2.0\bom-tools.fsproj.CoreCompileInputs.cache

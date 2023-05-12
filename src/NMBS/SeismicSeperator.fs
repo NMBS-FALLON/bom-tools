@@ -1228,7 +1228,8 @@ module Modifiers =
                                 let sizeAsArray = size.Split( [|"N";"K"|], StringSplitOptions.RemoveEmptyEntries)
                                 let totalLoad = float sizeAsArray.[1]
                                 let liveLoad = (System.Math.Ceiling((totalLoad * 1000.0 - (girder.PDL liveLoadUNO liveLoadSpecialNotes)) / 100.0) * 100.0) / 1000.0
-                                let newDesignation = sizeAsArray.[0] + "N" + sizeAsArray.[1] + "/" + (string liveLoad) + "K" + sizeAsArray.[2]
+                                let netUplift = if sizeAsArray.Length = 2 then "" else sizeAsArray.[2]
+                                let newDesignation = sizeAsArray.[0] + "N" + sizeAsArray.[1] + "/" + (string liveLoad) + "K" + netUplift
                                 array.[i, colIndex + 2] <- box newDesignation
                         if (sheet.Range("A26").Value2 :?> string) = "MARK" then
                             sheet.Range("C28", "C45").Value2 <- array.[*, (colIndex + 2)..]
