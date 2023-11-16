@@ -1,0 +1,5 @@
+FSharp.Core
+DocumentFormat.OpenXml
+EPPlus
+Microsoft.Office.Interop.Excel
+MicrosoftOfficeCore

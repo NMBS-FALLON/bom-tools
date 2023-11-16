@@ -225,7 +225,7 @@ type Joist =
     member this.UDL =
         let size = this.JoistSize
         if size.Contains("/") then
-            let sizeAsArray = size.Split( [|"LH"; "K"; "/"|], StringSplitOptions.RemoveEmptyEntries)
+            let sizeAsArray = size.Split( [|"LH"; "K"; "WN"; "/"|], StringSplitOptions.RemoveEmptyEntries)
             let TL = float sizeAsArray.[1]
             let LL = float sizeAsArray.[2]
             let DL = TL - LL
@@ -266,7 +266,7 @@ type Joist =
                     |> List.map (fun note -> note.Load)
                     |> List.filter (fun load -> load.Category <> "WL" && load.Category <> "SM" && (load.LoadCases = [] || (load.LoadCases |> List.contains 1)))
                     |> List.map (fun load -> {load with LoadCases = [3]})
-                    |> List.append [udl; sds]
+                    |> List.append [udl (*; sds*)]
                 | _ -> []
             else
                 []
@@ -459,11 +459,12 @@ type Girder =
     member this.SdsLoads sds liveLoadUNO liveLoadSpecialNotes =
         let dl = this.PDL liveLoadUNO liveLoadSpecialNotes
         let geom = this.GirderGeometry
-        [for i = 1 to geom.NumPanels do
+        (*[for i = 1 to geom.NumPanels do
             let distanceFt, distanceIn = getPanelDim i geom
             yield
                 Load.create("C", "SM", "TC", dl * 0.14 * sds, Some distanceFt, Some distanceIn,
-                            None, None, None, Some "L-BL", [3])]
+                            None, None, None, Some "L-BL", [3])]*)
+        []
 
     member this.DeadLoads liveLoadUNO liveLoadSpecialNotes =
         let dl = this.PDL liveLoadUNO liveLoadSpecialNotes
